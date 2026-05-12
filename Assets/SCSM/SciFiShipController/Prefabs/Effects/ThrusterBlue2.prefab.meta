@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb9d0b708640c2c41b7f0fd7736ac234
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/ThrusterBlue2.prefab
+  uploadId: 831596

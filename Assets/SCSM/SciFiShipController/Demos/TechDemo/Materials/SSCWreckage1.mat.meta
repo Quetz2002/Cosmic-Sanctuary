@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 39013a7e338473b4886f42b7188d9fa2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Materials/SSCWreckage1.mat
+  uploadId: 831596

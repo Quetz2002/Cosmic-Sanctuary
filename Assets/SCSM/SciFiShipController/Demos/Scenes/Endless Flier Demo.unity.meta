@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 5751785e8db85a04185565f57d4a0ef4
+timeCreated: 1544595046
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Endless Flier Demo.unity
+  uploadId: 831596

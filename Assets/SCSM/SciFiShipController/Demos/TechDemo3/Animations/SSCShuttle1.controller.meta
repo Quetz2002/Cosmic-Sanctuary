@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0d9bd34d29dc8024abeb4fd0bb9778c6
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Animations/SSCShuttle1.controller
+  uploadId: 831596

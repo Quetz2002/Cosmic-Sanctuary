@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: ee449f684f4690048ae4d25a4b447e1a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Ships/SSCInterceptor
+    NPC (Arcade) Enemy.prefab
+  uploadId: 831596

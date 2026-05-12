@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 80313388ba1e6a0448bdc6d926155a14
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Pipes/SSCPipe3.prefab
+  uploadId: 831596

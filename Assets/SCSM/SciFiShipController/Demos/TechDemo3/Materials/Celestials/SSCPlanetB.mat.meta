@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f4d272847232ba04e9a69ee6936b7b43
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Celestials/SSCPlanetB.mat
+  uploadId: 831596

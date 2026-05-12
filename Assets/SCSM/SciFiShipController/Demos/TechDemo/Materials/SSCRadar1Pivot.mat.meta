@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0982bcad596225b40addd69153b6e39c
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Materials/SSCRadar1Pivot.mat
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 205ecf0d6c496f54cb1c0eb05448d3e5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Beams/BeamBasic1.prefab
+  uploadId: 831596

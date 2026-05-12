@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: ad4edcfbb393f9f499c0313705988071
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/LiftParts/SSCLiftTower1.prefab
+  uploadId: 831596

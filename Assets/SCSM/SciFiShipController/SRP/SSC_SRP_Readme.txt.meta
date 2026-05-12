@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 99409b06e494f8d47a48a29234522710
+timeCreated: 1555165111
+licenseType: Store
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/SRP/SSC_SRP_Readme.txt
+  uploadId: 831596

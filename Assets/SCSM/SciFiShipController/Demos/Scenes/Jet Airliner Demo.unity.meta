@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6769a9fd677b1be4ab381f6cedbf48f6
+timeCreated: 1545203129
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Jet Airliner Demo.unity
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 000c72d796658a5449571cb96d6dbc30
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Projectiles/TurretBasicProjectile.prefab
+  uploadId: 831596

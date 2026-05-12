@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: bf598e6f115db3047b41b8befae0be92
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Prefabs/Environment/AGTrack1.prefab
+  uploadId: 831596

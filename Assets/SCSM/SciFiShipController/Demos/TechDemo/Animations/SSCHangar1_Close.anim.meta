@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d7dc7148e6fa43047979f7914a35757d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Animations/SSCHangar1_Close.anim
+  uploadId: 831596

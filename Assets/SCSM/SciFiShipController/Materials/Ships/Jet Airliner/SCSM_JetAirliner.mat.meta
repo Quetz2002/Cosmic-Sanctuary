@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 359f89b91e32d43d78fe88b87f6590c2
+timeCreated: 1444354458
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Ships/Jet Airliner/SCSM_JetAirliner.mat
+  uploadId: 831596

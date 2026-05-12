@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2ae32006d54a433478e8b3fe086ebac8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/VR/Prefabs/SSCInterceptor (Arcade)
+    VR.prefab
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a1383cde55b30834fa28d424d9a3442f
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Floating Point Demo.unity
+  uploadId: 831596

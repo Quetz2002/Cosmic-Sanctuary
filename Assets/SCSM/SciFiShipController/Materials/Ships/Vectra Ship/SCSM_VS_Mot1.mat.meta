@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8a308833ea27504409a12027300390aa
+timeCreated: 1532761920
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Ships/Vectra Ship/SCSM_VS_Mot1.mat
+  uploadId: 831596

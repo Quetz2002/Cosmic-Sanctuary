@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: b61bf7108df091349a044d83a0c7575b
+timeCreated: 1531475891
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Effects/ThrusterEffects.cs
+  uploadId: 831596

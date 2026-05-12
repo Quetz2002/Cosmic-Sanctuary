@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 12086d94e4e1bbf40838d63bf24be437
+timeCreated: 1558690243
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Editor/DemoControlModuleEditor.cs
+  uploadId: 831596

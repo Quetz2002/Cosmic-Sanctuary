@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 036bf43638374bb4c90fdefa5dd3d2f6
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/LiftParts/SSCLiftHead2.prefab
+  uploadId: 831596

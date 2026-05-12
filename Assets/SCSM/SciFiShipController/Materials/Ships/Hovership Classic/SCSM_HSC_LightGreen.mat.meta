@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 1ba60f317fd95624f90d49c2a1ea20b0
+timeCreated: 1532761920
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Ships/Hovership Classic/SCSM_HSC_LightGreen.mat
+  uploadId: 831596

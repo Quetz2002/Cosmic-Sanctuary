@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8268da8fb9c775a42959253aed187e44
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Materials/SSCBunker1_LOD1.mat
+  uploadId: 831596

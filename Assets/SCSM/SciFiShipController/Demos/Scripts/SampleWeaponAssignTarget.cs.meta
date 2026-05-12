@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: d946b52bd0cf0b046a8fc4a045da3e3b
+timeCreated: 1560773339
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scripts/SampleWeaponAssignTarget.cs
+  uploadId: 831596

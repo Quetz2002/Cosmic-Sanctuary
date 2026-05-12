@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3a8fad4f4acb4c944bf8c96839d0679b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Projectiles/ProjectileBasic7.prefab
+  uploadId: 831596

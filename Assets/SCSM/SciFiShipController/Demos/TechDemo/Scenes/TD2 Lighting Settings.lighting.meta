@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 24ab5d47e46519b479a54dc007c16f26
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Scenes/TD2 Lighting Settings.lighting
+  uploadId: 831596

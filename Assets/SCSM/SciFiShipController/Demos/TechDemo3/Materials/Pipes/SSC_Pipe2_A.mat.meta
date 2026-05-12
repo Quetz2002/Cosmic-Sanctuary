@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: e6b35b82d2fff2c41832ca4e57371d8d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Pipes/SSC_Pipe2_A.mat
+  uploadId: 831596

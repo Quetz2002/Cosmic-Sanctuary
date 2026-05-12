@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6b3a6c30737a82e4e9ba2ce4539dedac
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Destructs/SSCShieldGen1_Destruct.prefab
+  uploadId: 831596

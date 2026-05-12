@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 98fd546f028620545946a4d15f1c286e
+timeCreated: 1556191104
+licenseType: Store
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/3rdParty/Rewired_Readme.txt
+  uploadId: 831596

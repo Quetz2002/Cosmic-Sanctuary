@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 54d7b9ca368d2dd449a56b77a4d57911
+timeCreated: 1562569544
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scripts/SampleSwitchCameraTarget.cs
+  uploadId: 831596

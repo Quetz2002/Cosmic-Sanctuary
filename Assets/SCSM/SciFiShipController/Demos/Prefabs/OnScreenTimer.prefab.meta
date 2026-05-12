@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0b37a360fda4d3b4584561b9b206e76a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Prefabs/OnScreenTimer.prefab
+  uploadId: 831596

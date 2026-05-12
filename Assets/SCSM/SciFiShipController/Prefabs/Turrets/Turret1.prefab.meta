@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 8a75596c28ade8e49ae631408330e071
+timeCreated: 1558181282
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Turrets/Turret1.prefab
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: e45e584a320364f449e67f283e4d4ca1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/MuzzleFlash2.prefab
+  uploadId: 831596

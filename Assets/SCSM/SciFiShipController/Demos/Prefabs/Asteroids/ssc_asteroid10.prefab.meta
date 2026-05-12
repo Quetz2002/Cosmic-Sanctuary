@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 621f4bb2696a2414e9298b3ae1910eb2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Prefabs/Asteroids/ssc_asteroid10.prefab
+  uploadId: 831596

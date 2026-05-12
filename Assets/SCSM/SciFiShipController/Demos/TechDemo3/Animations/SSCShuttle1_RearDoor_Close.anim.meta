@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a219317c3cd4cb54fa6f0045d189f61a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Animations/SSCShuttle1_RearDoor_Close.anim
+  uploadId: 831596

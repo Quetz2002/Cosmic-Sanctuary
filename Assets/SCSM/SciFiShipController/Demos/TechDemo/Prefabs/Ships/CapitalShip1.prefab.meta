@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a24e879271a7b624a8f47f67a8bd17cc
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Ships/CapitalShip1.prefab
+  uploadId: 831596

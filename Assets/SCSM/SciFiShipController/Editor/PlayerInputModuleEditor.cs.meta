@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 02ba348d254ea40438245465ab45f148
+timeCreated: 1531901242
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Editor/PlayerInputModuleEditor.cs
+  uploadId: 831596

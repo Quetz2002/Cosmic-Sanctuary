@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7d060a5b54863054d95ebca0469c7ebb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Props/SSCLadder1.prefab
+  uploadId: 831596

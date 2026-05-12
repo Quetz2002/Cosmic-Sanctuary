@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5ea4d09d299b5264bb264581412e48a4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Corridors/SSCRoom1.prefab
+  uploadId: 831596

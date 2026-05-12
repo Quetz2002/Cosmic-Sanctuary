@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 680cea5965624aa4c8243105a731ee6a
+timeCreated: 1563171188
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/ThrusterExhaust1.prefab
+  uploadId: 831596

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 4a641e45b8ef7b94994b1b16a2504e97
+timeCreated: 1531377815
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Effects/ParticleSteam.mat
+  uploadId: 831596

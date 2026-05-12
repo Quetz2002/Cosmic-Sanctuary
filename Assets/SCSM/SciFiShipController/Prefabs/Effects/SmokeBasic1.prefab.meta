@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 33b3a393fc1e9d44997d078926162172
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/SmokeBasic1.prefab
+  uploadId: 831596

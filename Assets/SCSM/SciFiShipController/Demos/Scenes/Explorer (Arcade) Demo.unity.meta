@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c735236a7bbcac240ad4ccdfa70547f4
+timeCreated: 1545203288
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Explorer (Arcade) Demo.unity
+  uploadId: 831596

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 1715fea996b8de64fbd8b661a04d31a1
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 112000000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Scenes/techdemo2scene1/LightingData.asset
+  uploadId: 831596

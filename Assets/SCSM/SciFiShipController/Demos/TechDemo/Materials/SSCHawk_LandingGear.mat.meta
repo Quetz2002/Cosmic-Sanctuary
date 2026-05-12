@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 2fcab4a40067b76419eed1b45ab4e012
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Materials/SSCHawk_LandingGear.mat
+  uploadId: 831596

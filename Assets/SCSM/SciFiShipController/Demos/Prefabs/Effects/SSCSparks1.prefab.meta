@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3963f77b419178c469bf1648a8446daa
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Prefabs/Effects/SSCSparks1.prefab
+  uploadId: 831596

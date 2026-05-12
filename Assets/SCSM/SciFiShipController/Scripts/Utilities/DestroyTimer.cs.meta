@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: ffe7326c66d67de4a812b1394b1acfa1
+timeCreated: 1555903230
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Utilities/DestroyTimer.cs
+  uploadId: 831596

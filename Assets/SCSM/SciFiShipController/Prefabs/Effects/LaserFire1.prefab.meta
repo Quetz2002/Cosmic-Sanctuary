@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4b4922604bd22144f85cdb0621c08df3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/LaserFire1.prefab
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 0a1238c73c85a3145bffe615d9349a0a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Destructs/SSCCapitalship1_Destruct.prefab
+  uploadId: 831596

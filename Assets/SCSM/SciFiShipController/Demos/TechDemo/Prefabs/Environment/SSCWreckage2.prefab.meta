@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9a216ca2c3f2df6439c6a25eff9dc2ff
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Environment/SSCWreckage2.prefab
+  uploadId: 831596

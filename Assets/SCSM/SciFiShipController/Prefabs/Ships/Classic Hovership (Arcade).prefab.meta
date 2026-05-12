@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: 029ca07b3daebf948888bac3d786cffc
+timeCreated: 1532765123
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Ships/Classic Hovership (Arcade).prefab
+  uploadId: 831596

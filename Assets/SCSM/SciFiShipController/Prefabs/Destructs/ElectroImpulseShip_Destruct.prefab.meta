@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5787f751a6f51d541ad03879493f43d0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Destructs/ElectroImpulseShip_Destruct.prefab
+  uploadId: 831596
