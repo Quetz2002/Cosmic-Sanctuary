@@ -26,6 +26,7 @@ Material:
     m_TexEnvs: []
     m_Ints: []
     m_Floats:
+    - _QueueControl: 0
     - _RippleDensity: 800
     m_Colors:
     - _BaseColor: {r: 0, g: 1, b: 0.77877903, a: 1}
