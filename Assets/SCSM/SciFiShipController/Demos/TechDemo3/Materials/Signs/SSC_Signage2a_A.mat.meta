@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 0bbd950d9d88b454e85718dfe3bcfa9e
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Signs/SSC_Signage2a_A.mat
+  uploadId: 831596

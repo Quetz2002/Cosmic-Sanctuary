@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 0c9da70eeb39d304fb77618794a52069
+timeCreated: 1561547749
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scripts/HideCursor.cs
+  uploadId: 831596

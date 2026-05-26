@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 7c2cd04e0ed165748a37605992131ee8
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Materials/SSCRadar1Dish.mat
+  uploadId: 831596

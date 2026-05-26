@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: cf10a0b562852f94faf4ac35019169d9
+timeCreated: 1562130448
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Materials/Environment/SCSM_Planet1.mat
+  uploadId: 831596

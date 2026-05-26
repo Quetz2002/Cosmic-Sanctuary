@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1a8c07b3f07a98e4daff3d88420424ad
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Props/SSCRadarDish1.prefab
+  uploadId: 831596

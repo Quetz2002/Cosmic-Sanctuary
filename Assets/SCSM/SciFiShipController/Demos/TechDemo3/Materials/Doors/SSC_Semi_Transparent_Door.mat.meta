@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 457fb37eae8d51446af4b8abc77183b7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Doors/SSC_Semi_Transparent_Door.mat
+  uploadId: 831596

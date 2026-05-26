@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: dd4bb6aab60f535448c0de7f0aeb79b8
+timeCreated: 1544599681
+licenseType: Store
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Anti-gravity Racer Demo.unity
+  uploadId: 831596

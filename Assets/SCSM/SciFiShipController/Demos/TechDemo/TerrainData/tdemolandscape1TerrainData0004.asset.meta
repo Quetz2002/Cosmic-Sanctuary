@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: d1d391f431534ad40a77fb70f34ca712
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 15600000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/TerrainData/tdemolandscape1TerrainData0004.asset
+  uploadId: 831596

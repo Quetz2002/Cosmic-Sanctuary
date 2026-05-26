@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: e80eb5a15f1ebf140be5452c8de334b6
+timeCreated: 1544599383
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Ships/Sprinter Ship/SCSM_SS_Body.mat
+  uploadId: 831596

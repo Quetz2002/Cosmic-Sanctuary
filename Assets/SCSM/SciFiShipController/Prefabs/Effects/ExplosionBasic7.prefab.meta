@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f68485eb2833bcf448a30804e248bd87
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/ExplosionBasic7.prefab
+  uploadId: 831596

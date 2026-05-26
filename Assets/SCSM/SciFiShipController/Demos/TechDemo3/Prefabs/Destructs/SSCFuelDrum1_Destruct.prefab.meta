@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1eb17d1900fec2746813b2b1bc2887b7
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Destructs/SSCFuelDrum1_Destruct.prefab
+  uploadId: 831596

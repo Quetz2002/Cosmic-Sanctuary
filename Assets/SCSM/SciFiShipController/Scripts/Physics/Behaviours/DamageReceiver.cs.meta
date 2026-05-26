@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: dccca426257ea6640add9c3e1633bc37
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Physics/Behaviours/DamageReceiver.cs
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 2db99ba426a79934bb2e97541e954e52
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Props/SSCControlDesk1.prefab
+  uploadId: 831596

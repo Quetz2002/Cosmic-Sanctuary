@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1258392004c53d74ea1c0223102e0999
+TextScriptImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Scenes/techdemo2_setup_readme.txt
+  uploadId: 831596

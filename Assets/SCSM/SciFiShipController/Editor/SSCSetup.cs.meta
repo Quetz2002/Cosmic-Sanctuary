@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 2c6e88b5d395c5a448fcfbfd5df31631
+timeCreated: 1545619359
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Editor/SSCSetup.cs
+  uploadId: 831596

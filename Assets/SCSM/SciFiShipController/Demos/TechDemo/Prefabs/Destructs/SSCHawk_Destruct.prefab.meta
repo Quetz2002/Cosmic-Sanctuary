@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 05104ccc2ca2ba249a7e496f861ded83
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Destructs/SSCHawk_Destruct.prefab
+  uploadId: 831596

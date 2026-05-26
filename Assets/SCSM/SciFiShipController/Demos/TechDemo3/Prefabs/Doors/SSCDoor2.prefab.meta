@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 016bc9433a00e314ab82d62898a8d22c
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Doors/SSCDoor2.prefab
+  uploadId: 831596

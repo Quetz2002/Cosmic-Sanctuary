@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 2f23f27705b7c5d48ae27c3ec83c64bf
+timeCreated: 1560663973
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Misc/Celestials.cs
+  uploadId: 831596

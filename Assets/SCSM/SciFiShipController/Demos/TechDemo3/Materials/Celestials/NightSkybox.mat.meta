@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 52149171413d699458f5bcc33c52018d
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Celestials/NightSkybox.mat
+  uploadId: 831596

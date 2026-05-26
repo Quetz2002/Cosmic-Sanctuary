@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 400711d6d5562cf4d92e90c24bff72ee
+timeCreated: 1557547900
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Effects/EffectsModule.cs
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 23d2fe023e8cbb7459e9d173ad592b4a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Effects/ExplosionHuge1.prefab
+  uploadId: 831596

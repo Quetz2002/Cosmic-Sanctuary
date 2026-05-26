@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 9bbd8487723b35548bbb67530350484e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo/Prefabs/Environment/SSCDesertFriendlyBase1.prefab
+  uploadId: 831596

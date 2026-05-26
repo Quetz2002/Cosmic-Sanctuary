@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 19eba8ddd72859f4483d8dddab870de7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 4890085278179872738
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Asteroids DemoSettings.lighting
+  uploadId: 831596

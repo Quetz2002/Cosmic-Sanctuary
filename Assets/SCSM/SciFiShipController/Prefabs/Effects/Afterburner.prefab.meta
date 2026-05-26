@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f50113367af2cbb49af05aa201893501
+timeCreated: 1531377722
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/Afterburner.prefab
+  uploadId: 831596

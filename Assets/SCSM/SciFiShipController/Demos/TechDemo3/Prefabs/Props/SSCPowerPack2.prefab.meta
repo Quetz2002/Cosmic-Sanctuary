@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 711d5a48bfc05b0489025642beb82fda
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Props/SSCPowerPack2.prefab
+  uploadId: 831596

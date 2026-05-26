@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 6738739adbbebe44494e9bbb063ab03a
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Ships/Vectra
+    Ship Enemy (NPC) TD3.prefab
+  uploadId: 831596

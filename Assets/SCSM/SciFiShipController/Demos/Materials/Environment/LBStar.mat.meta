@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bc22e55b1232b44119d8720a8728a966
+timeCreated: 1456835702
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Materials/Environment/LBStar.mat
+  uploadId: 831596

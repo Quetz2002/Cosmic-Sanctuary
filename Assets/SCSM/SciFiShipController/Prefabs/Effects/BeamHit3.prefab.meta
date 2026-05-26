@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5f4b08b4858a2df4ead7f0f7165fed21
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/BeamHit3.prefab
+  uploadId: 831596

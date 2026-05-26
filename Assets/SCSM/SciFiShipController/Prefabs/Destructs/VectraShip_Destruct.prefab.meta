@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 8e53a9d2d41397349a39496a8441d7bb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Destructs/VectraShip_Destruct.prefab
+  uploadId: 831596

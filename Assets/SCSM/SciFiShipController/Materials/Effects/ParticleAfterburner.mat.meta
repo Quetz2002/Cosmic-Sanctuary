@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: c9206887b3762db4a8049e549b710ef5
+timeCreated: 1531377815
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Effects/ParticleAfterburner.mat
+  uploadId: 831596

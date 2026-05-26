@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 27f36fa4d39d77943ae901ee3608f991
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Ships/SSC_Shuttle1_Exterior_LOD1_A
+    2.mat
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 673d0bf64dd2f7c4dbc153aae9c34467
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Corridors/SSCJunctionX.prefab
+  uploadId: 831596

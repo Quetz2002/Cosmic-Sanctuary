@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 806f19d83875bc349aa4bbe9954d7c4a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/General/SSCSpacePort.prefab
+  uploadId: 831596

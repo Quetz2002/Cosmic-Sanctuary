@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 646d4507f44a3cf47bc8f0b081a49f6e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scripts/SampleVariableFlightTurnAccel.cs
+  uploadId: 831596

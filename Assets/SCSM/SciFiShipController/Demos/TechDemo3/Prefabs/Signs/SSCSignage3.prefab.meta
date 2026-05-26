@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 632ef1ff5ac6e0c4c93fdbfdcee51fbd
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Signs/SSCSignage3.prefab
+  uploadId: 831596

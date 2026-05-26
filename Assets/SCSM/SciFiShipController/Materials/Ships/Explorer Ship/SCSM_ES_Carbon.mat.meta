@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: f4b4ce1655eb9ee45acfe82894bee961
+timeCreated: 1532762084
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Materials/Ships/Explorer Ship/SCSM_ES_Carbon.mat
+  uploadId: 831596

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 6fb5b5021077abf4daa2c0cadf709c93
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Utilities/SSCLightStrobe.cs
+  uploadId: 831596

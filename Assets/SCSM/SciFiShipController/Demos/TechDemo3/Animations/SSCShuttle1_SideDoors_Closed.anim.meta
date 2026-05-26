@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 82db28184a774e24ab55981d82333da7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 7400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Animations/SSCShuttle1_SideDoors_Closed.anim
+  uploadId: 831596

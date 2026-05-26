@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1439f97625877614da7b4d037ed459cb
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Prefabs/Effects/GasThruster6.prefab
+  uploadId: 831596

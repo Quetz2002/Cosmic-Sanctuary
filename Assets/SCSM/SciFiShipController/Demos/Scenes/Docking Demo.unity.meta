@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 17347b40ed3712a4d84d73412b121d2d
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Scenes/Docking Demo.unity
+  uploadId: 831596

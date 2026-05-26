@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 9a6d152b91673fb4293353b46e4eb84c
+timeCreated: 1552963349
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/Physics/Behaviours/ProjectileModule.cs
+  uploadId: 831596

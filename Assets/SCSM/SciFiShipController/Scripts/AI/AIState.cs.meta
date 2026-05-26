@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 57fd7c2ff60e8bb4d901b5830c407334
+timeCreated: 1566980210
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Scripts/AI/AIState.cs
+  uploadId: 831596

@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: 8a5e4d6ba35021c4da01a8d726d5165e
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Editor/ShipAIInputModuleEditor.cs
+  uploadId: 831596

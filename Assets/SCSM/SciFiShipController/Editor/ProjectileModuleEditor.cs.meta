@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 9d58fdd7e9e887f41a5cc68898666141
+timeCreated: 1553065311
+licenseType: Store
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Editor/ProjectileModuleEditor.cs
+  uploadId: 831596

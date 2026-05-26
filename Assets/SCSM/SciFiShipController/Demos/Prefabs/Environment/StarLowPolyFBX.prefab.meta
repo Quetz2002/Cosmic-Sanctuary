@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6dd0d98eb6be16548975f052a37acc8f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Prefabs/Environment/StarLowPolyFBX.prefab
+  uploadId: 831596

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: c72f86c21ccb2224eb28a9c4892f4dc8
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Props/SSCContainer1.prefab
+  uploadId: 831596

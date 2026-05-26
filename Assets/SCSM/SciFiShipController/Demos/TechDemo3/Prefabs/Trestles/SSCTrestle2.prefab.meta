@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: acecbc9f7189f7b49a13e8a71595ed51
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Prefabs/Trestles/SSCTrestle2.prefab
+  uploadId: 831596

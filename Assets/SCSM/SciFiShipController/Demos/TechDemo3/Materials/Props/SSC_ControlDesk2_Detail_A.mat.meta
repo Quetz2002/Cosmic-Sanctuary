@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 203b8ab0886e49c4a8feb72f891dfd48
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/TechDemo3/Materials/Props/SSC_ControlDesk2_Detail_A.mat
+  uploadId: 831596

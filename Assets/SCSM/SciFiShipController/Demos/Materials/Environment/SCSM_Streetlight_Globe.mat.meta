@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d7806c7921678354490687cf5a6ba3db
+timeCreated: 1562130448
+licenseType: Store
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 134914
+  packageName: Sci-Fi Ship Controller
+  packageVersion: 1.5.8
+  assetPath: Assets/SCSM/SciFiShipController/Demos/Materials/Environment/SCSM_Streetlight_Globe.mat
+  uploadId: 831596
