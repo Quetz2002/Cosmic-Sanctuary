@@ -109,6 +109,24 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Recolectar"",
+                    ""type"": ""Button"",
+                    ""id"": ""24c7a6de-cc43-4961-806a-8cf79d8d6183"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Depositar"",
+                    ""type"": ""Button"",
+                    ""id"": ""d8676959-91ff-4462-b32e-dd06e7ff94ce"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -177,6 +195,28 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""action"": ""Mirar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""759a7efb-6451-493d-853b-a89e3a62396e"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Recolectar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""76f9693c-c3e0-42a7-9bf6-f10dc387480c"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Depositar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -187,6 +227,8 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         m_Jugador = asset.FindActionMap("Jugador", throwIfNotFound: true);
         m_Jugador_Mover = m_Jugador.FindAction("Mover", throwIfNotFound: true);
         m_Jugador_Mirar = m_Jugador.FindAction("Mirar", throwIfNotFound: true);
+        m_Jugador_Recolectar = m_Jugador.FindAction("Recolectar", throwIfNotFound: true);
+        m_Jugador_Depositar = m_Jugador.FindAction("Depositar", throwIfNotFound: true);
     }
 
     ~@Controles()
@@ -269,6 +311,8 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     private List<IJugadorActions> m_JugadorActionsCallbackInterfaces = new List<IJugadorActions>();
     private readonly InputAction m_Jugador_Mover;
     private readonly InputAction m_Jugador_Mirar;
+    private readonly InputAction m_Jugador_Recolectar;
+    private readonly InputAction m_Jugador_Depositar;
     /// <summary>
     /// Provides access to input actions defined in input action map "Jugador".
     /// </summary>
@@ -288,6 +332,14 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Jugador/Mirar".
         /// </summary>
         public InputAction @Mirar => m_Wrapper.m_Jugador_Mirar;
+        /// <summary>
+        /// Provides access to the underlying input action "Jugador/Recolectar".
+        /// </summary>
+        public InputAction @Recolectar => m_Wrapper.m_Jugador_Recolectar;
+        /// <summary>
+        /// Provides access to the underlying input action "Jugador/Depositar".
+        /// </summary>
+        public InputAction @Depositar => m_Wrapper.m_Jugador_Depositar;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -320,6 +372,12 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Mirar.started += instance.OnMirar;
             @Mirar.performed += instance.OnMirar;
             @Mirar.canceled += instance.OnMirar;
+            @Recolectar.started += instance.OnRecolectar;
+            @Recolectar.performed += instance.OnRecolectar;
+            @Recolectar.canceled += instance.OnRecolectar;
+            @Depositar.started += instance.OnDepositar;
+            @Depositar.performed += instance.OnDepositar;
+            @Depositar.canceled += instance.OnDepositar;
         }
 
         /// <summary>
@@ -337,6 +395,12 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Mirar.started -= instance.OnMirar;
             @Mirar.performed -= instance.OnMirar;
             @Mirar.canceled -= instance.OnMirar;
+            @Recolectar.started -= instance.OnRecolectar;
+            @Recolectar.performed -= instance.OnRecolectar;
+            @Recolectar.canceled -= instance.OnRecolectar;
+            @Depositar.started -= instance.OnDepositar;
+            @Depositar.performed -= instance.OnDepositar;
+            @Depositar.canceled -= instance.OnDepositar;
         }
 
         /// <summary>
@@ -391,5 +455,19 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnMirar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Recolectar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnRecolectar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Depositar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnDepositar(InputAction.CallbackContext context);
     }
 }
