@@ -48,7 +48,7 @@ public class HologramUIController : MonoBehaviour
         UpdateHighlight();
 
         // I tell the player controller to freeze camera movement if UI is open
-        FindObjectOfType<PlayerController>().isEditingUI = isUIAccessible;
+        Object.FindFirstObjectByType<PlayerController>().isEditingUI = isUIAccessible;
     }
 
     private void MoveSelection(int direction)
