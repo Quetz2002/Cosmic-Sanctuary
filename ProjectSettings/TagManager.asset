@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags:
-  - NPC
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -12,6 +11,8 @@ TagManager:
   - 
   - Water
   - UI
+  - PlaceableSurface
+  - NotPlaceableSurface
   - 
   - 
   - 
@@ -30,10 +31,8 @@ TagManager:
   - 
   - 
   - 
-  - NonClippable
-  - SSC Celestials
   - 
-  - Small Ships
+  - 
   - 
   - 
   - 

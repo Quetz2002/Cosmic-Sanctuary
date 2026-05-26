@@ -6,8 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Aurora Palm.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: a442f87cb4e1b494cbfca7db96efa7b0
+  - enabled: 1
+    path: Assets/Scenes/Nave.unity
+    guid: a8dd4223da003aa43a5e9164dffebd35
+  - enabled: 1
+    path: Assets/Scenes/Prueba.unity
+    guid: 4d0974124e5b5254c837335a40e7eece
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0
