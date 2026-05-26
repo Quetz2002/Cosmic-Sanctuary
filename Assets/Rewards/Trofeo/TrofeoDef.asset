@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a10d9d1cb160b94e915cfa1d900c68a, type: 3}
+  m_Name: TrofeoDef
+  m_EditorClassIdentifier: Assembly-CSharp::RewardItem
+  itemName: 
+  placementPrefab: {fileID: 2498053065194429487, guid: 76e97e9cc1ce2194c842abeada25d1d2, type: 3}
+  miniaturePrefab: {fileID: 0}
+  extents: {x: 0.5, y: 0.5, z: 0.5}
