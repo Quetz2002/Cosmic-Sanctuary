@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - NPC
+  - Recolectable
   layers:
   - Default
   - TransparentFX
@@ -29,10 +31,10 @@ TagManager:
   - 
   - 
   - 
+  - NonClippable
+  - SSC Celestials
   - 
-  - 
-  - 
-  - 
+  - Small Ships
   - 
   - 
   - 
