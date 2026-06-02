@@ -10,9 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3a10d9d1cb160b94e915cfa1d900c68a, type: 3}
-  m_Name: CommonCrystalDef
+  m_Name: TrofeoDef
   m_EditorClassIdentifier: Assembly-CSharp::RewardItem
-  itemName: CommonCrystal
-  placementPrefab: {fileID: 8541988069111768168, guid: ae7c61ad63ef8db4cb946daa696b9223, type: 3}
-  miniaturePrefab: {fileID: 8541988069111768168, guid: ae7c61ad63ef8db4cb946daa696b9223, type: 3}
+  itemID: ignis_03
+  itemName: Trohpy
+  uiIcon: {fileID: 21300000, guid: ea389129023f44b4e85f237af73cc234, type: 3}
+  placementPrefab: {fileID: 2498053065194429487, guid: 76e97e9cc1ce2194c842abeada25d1d2, type: 3}
+  miniaturePrefab: {fileID: 2498053065194429487, guid: 76e97e9cc1ce2194c842abeada25d1d2, type: 3}
   extents: {x: 0.5, y: 0.5, z: 0.5}

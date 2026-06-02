@@ -3,9 +3,13 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Reward", menuName = "Cosmic Sanctuary/Reward Item")]
 public class RewardItem : ScriptableObject
 {
-    // I am defining the core data for each reward we find on planets
+    // I am giving each item a unique string ID to track it across scenes
+    public string itemID;
     public string itemName;
-    public GameObject placementPrefab; // The full-size prefab for the Ship
-    public GameObject miniaturePrefab; // The small version for Giovanni's Shuttle
-    public Vector3 extents = new Vector3(0.5f, 0.5f, 0.5f); // Used for collision checking
+    public Sprite uiIcon; // Used for the new scrollable inventory
+
+    public GameObject placementPrefab;
+    public GameObject miniaturePrefab;
+
+    public Vector3 extents = new Vector3(0.25f, 0.25f, 0.25f);
 }
