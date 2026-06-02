@@ -3,12 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - NPC
+  - Recolectable
+  - ZonaEntrega
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Terrain
   - Water
   - UI
   - PlaceableSurface
@@ -29,10 +32,10 @@ TagManager:
   - 
   - 
   - 
+  - NonClippable
+  - SSC Celestials
   - 
-  - 
-  - 
-  - 
+  - Small Ships
   - 
   - 
   - 

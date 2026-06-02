@@ -55,8 +55,6 @@ public class Recolectar : MonoBehaviour
             objRecogidos = 0;
         }
     }
-
-    // Detecta cuando entras y sales de la zona de entrega
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ZonaEntrega"))

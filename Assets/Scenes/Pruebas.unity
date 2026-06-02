@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 257d9140e194e50419305d030bacf979, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
-  prefab: {fileID: 1076888262062735268, guid: f1fb5f7a4b9b76043b0c41442c5b4e90, type: 3}
+  prefab: {fileID: 3537778555615808863, guid: ed3c19f817321e14caab1ee0adcb4fd0, type: 3}
   spawnAmount: 7
   minDistance: 1
   maxAttempts: 5
