@@ -151,32 +151,48 @@ public class PlacementSystem : MonoBehaviour
         }
     }
 
+    // REEMPLAZA EL MÉTODO HandleClickToPlace() COMPLETO POR ESTE:
     private void HandleClickToPlace()
     {
-        // I finalize the placement when the user clicks LMB
         if (Input.GetMouseButtonDown(0) && isValidPlacement && currentPreview.activeSelf)
         {
             GameObject placedObject = Instantiate(currentItemData.placementPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
 
-            // ADDED FIX: I assign the obstacle layer to the placed object AND all its children 
-            // so the colliders are correctly registered by the physics engine.
-            SetLayerRecursively(placedObject, LayerMask.NameToLayer("NotPlaceableSurface"));
+            int targetLayer = LayerMask.NameToLayer("Obstacles"); // OR "NotPlaceableSurface" based on your setup
+            if (targetLayer != -1) SetLayerRecursively(placedObject, targetLayer);
+
+            // ADDED: Set up the ID and default customization
+            PlacedRewardBehavior behavior = placedObject.GetComponent<PlacedRewardBehavior>();
+            if (behavior != null)
+            {
+                behavior.rewardID = currentItemData.itemID;
+                behavior.ApplyCustomization(Color.white, 0f);
+            }
+
+            // ADDED: Tell the GameManager to save this item's state
+            GameManager.Instance.SavePlacedItem(currentItemData.itemID, placedObject.transform.position, placedObject.transform.rotation, Color.white, 0f);
 
             Destroy(currentPreview);
             isPlacingMode = false;
         }
     }
 
+    // REEMPLAZA EL MÉTODO CheckForMovingExistingObject() COMPLETO POR ESTE:
     private void CheckForMovingExistingObject()
     {
-        // I handle picking up an already placed object to move them
         if (Input.GetMouseButtonDown(1)) // Right click to pick up
         {
             Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             if (Physics.Raycast(ray, out RaycastHit hit, placementRange, obstacleLayer))
             {
-                // ADDED FIX: I destroy the root of the hit object in case the collider was on a child mesh
-                Destroy(hit.collider.transform.root.gameObject);
+                PlacedRewardBehavior behavior = hit.collider.GetComponentInParent<PlacedRewardBehavior>();
+
+                if (behavior != null)
+                {
+                    // I tell the GameManager to forget this item was placed, making it available in UI again
+                    GameManager.Instance.RemovePlacedItem(behavior.rewardID);
+                    Destroy(behavior.gameObject);
+                }
             }
         }
     }

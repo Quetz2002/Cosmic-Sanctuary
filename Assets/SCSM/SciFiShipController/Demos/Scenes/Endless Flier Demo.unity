@@ -98,8 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_LightingSettings: {fileID: 4890085278179872738, guid: a9d1b3e1400d0ef4c814bd1580b2b75c,
-    type: 2}
+  m_LightingSettings: {fileID: 4890085278179872738, guid: a9d1b3e1400d0ef4c814bd1580b2b75c, type: 2}
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -163,57 +162,63 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: allowRepaint
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: selectedTabInt
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.centreOfMass.x
       value: 3.06507e-17
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.centreOfMass.y
       value: 0.00000025060888
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.centreOfMass.z
       value: -0.8292833
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.groundMatchDamping
       value: 50
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.maxGroundCheckDistance
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.groundMatchResponsiveness
       value: 75
       objectReference: {fileID: 0}
-    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-        type: 3}
+    - target: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
       propertyPath: shipInstance.maxGroundMatchAccelerationFactor
       value: 3.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 199505838781669668, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199888204037189132, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199936854582714074, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 199979892537693044, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
 --- !u!1 &1250122034 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: 780d7fafec9ea45498732140526bb9a8,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 780d7fafec9ea45498732140526bb9a8, type: 3}
   m_PrefabInstance: {fileID: 1893456151}
   m_PrefabAsset: {fileID: 0}
 --- !u!64 &1250122035
@@ -338,8 +343,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!114 &1688227282 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57,
-    type: 3}
+  m_CorrespondingSourceObject: {fileID: 114513435470810930, guid: 75b8ef553919f7c42868df581296dc57, type: 3}
   m_PrefabInstance: {fileID: 814347247}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
@@ -448,63 +452,51 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: target
       value: 
       objectReference: {fileID: 1688227282}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: moveSpeed
       value: 15
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: turnSpeed
       value: 12
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: orientUpwards
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: targetOffset.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: targetOffset.y
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: targetOffset.z
       value: -10
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: cameraRotationMode
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: lockCameraPosition
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: lockToTargetPosition
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: lockToTargetRotation
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664,
-        type: 3}
+    - target: {fileID: 114135697252686540, guid: 94d57961363b0854f953148ad941e664, type: 3}
       propertyPath: targetOffsetCoordinates
       value: 0
       objectReference: {fileID: 0}
