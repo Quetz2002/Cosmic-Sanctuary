@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Inventory")]
     public List<RewardItem> unlockedRewards = new List<RewardItem>();
     public int cosmicMaterials = 0; // The resource used for customization
+    public int currentTargetPlanetIndex = -1; // Tracks which planet we are currently flying towards
 
     [Header("Ship State")]
     public List<PlacedItemData> placedItemsData = new List<PlacedItemData>();
