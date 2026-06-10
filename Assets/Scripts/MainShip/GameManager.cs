@@ -91,15 +91,20 @@ public class GameManager : MonoBehaviour
             {
                 GameObject spawned = Instantiate(originalItem.placementPrefab, data.position, data.rotation);
 
-                // Assign to obstacles layer
-                SetLayerRecursively(spawned, LayerMask.NameToLayer("Obstacles"));
+                // FIXED: Assign to your specific obstacles layer
+                SetLayerRecursively(spawned, LayerMask.NameToLayer("NotPlaceableSurface"));
 
-                // Apply customizations
                 PlacedRewardBehavior behavior = spawned.GetComponent<PlacedRewardBehavior>();
                 if (behavior != null)
                 {
                     behavior.rewardID = data.itemID;
-                    behavior.ApplyCustomization(data.customColor, data.emissionIntensity);
+
+                    // FIXED: I only apply customization if the player actually used the C key (emission > -1)
+                    // Otherwise, it keeps your beautiful original material
+                    if (data.emissionIntensity > -1f)
+                    {
+                        behavior.ApplyCustomization(data.customColor, data.emissionIntensity);
+                    }
                 }
             }
         }

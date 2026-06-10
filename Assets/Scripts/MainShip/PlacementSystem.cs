@@ -154,23 +154,31 @@ public class PlacementSystem : MonoBehaviour
     // REEMPLAZA EL MÉTODO HandleClickToPlace() COMPLETO POR ESTE:
     private void HandleClickToPlace()
     {
+        // I finalize the placement when the user clicks LMB
         if (Input.GetMouseButtonDown(0) && isValidPlacement && currentPreview.activeSelf)
         {
             GameObject placedObject = Instantiate(currentItemData.placementPrefab, currentPreview.transform.position, currentPreview.transform.rotation);
 
-            int targetLayer = LayerMask.NameToLayer("Obstacles"); // OR "NotPlaceableSurface" based on your setup
-            if (targetLayer != -1) SetLayerRecursively(placedObject, targetLayer);
+            // FIXED: I changed 'Obstacles' to your actual layer name 'NotPlaceableSurface'
+            int targetLayer = LayerMask.NameToLayer("NotPlaceableSurface");
+            if (targetLayer != -1)
+            {
+                SetLayerRecursively(placedObject, targetLayer);
+            }
+            else
+            {
+                Debug.LogError("Layer 'NotPlaceableSurface' not found! Check spelling.");
+            }
 
-            // ADDED: Set up the ID and default customization
+            // I set up the ID but I REMOVED the line that forced the color to white
             PlacedRewardBehavior behavior = placedObject.GetComponent<PlacedRewardBehavior>();
             if (behavior != null)
             {
                 behavior.rewardID = currentItemData.itemID;
-                behavior.ApplyCustomization(Color.white, 0f);
             }
 
-            // ADDED: Tell the GameManager to save this item's state
-            GameManager.Instance.SavePlacedItem(currentItemData.itemID, placedObject.transform.position, placedObject.transform.rotation, Color.white, 0f);
+            // FIXED: I pass a dummy color and -1 emission to tell the GameManager "this is the original prefab material, don't override it"
+            GameManager.Instance.SavePlacedItem(currentItemData.itemID, placedObject.transform.position, placedObject.transform.rotation, Color.clear, -1f);
 
             Destroy(currentPreview);
             isPlacingMode = false;
