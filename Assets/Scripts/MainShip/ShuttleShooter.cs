@@ -1,57 +1,116 @@
 using UnityEngine;
 using System.Collections;
 
+// I create a custom class to easily manage multiple turrets in the Unity Inspector
+[System.Serializable]
+public class ShipTurret
+{
+    public Transform turretHead;
+    public Transform muzzlePoint;
+    public LineRenderer laserLine;
+}
+
 public class ShuttleShooter : MonoBehaviour
 {
+    [Header("Turret Setup")]
+    public ShipTurret[] turrets; // An array to hold as many turrets as we want
+    public float turretTurnSpeed = 15f;
+
     [Header("Shooting Properties")]
-    public float fireRange = 100f;
+    public float fireRange = 200f;
     public LayerMask meteorLayer;
-    public float fireRate = 0.25f;
+    public float fireRate = 0.2f; // Slightly faster to make alternating fire feel good
 
     [Header("Laser Visual FX")]
-    public LineRenderer laserLine;
     public float laserDuration = 0.05f;
 
     private Camera shuttleCamera;
     private float nextFireTime = 0f;
+    private Vector3 currentAimPoint;
+
+    // I use this to track which turret should fire next (Left or Right)
+    private int currentTurretIndex = 0;
 
     private void Start()
     {
         shuttleCamera = Camera.main;
-        if (laserLine != null) laserLine.enabled = false;
+
+        // Disable all lasers at the start
+        foreach (ShipTurret turret in turrets)
+        {
+            if (turret.laserLine != null) turret.laserLine.enabled = false;
+        }
     }
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
+        AimTurrets();
+
+        // FIXED: I changed GetMouseButtonDown to GetMouseButton(0) so the player can hold the click to autofire
+        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
             ShootLaser();
         }
     }
 
+    private void AimTurrets()
+    {
+        // 1. Find the target point from the center of the camera
+        Ray screenRay = shuttleCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+
+        if (Physics.Raycast(screenRay, out RaycastHit hit, fireRange, meteorLayer))
+        {
+            currentAimPoint = hit.point;
+        }
+        else
+        {
+            currentAimPoint = screenRay.GetPoint(fireRange);
+        }
+
+        // 2. Make EVERY turret look at that exact target point
+        foreach (ShipTurret turret in turrets)
+        {
+            if (turret.turretHead != null)
+            {
+                Vector3 aimDirection = currentAimPoint - turret.turretHead.position;
+
+                if (aimDirection.sqrMagnitude > 0.01f)
+                {
+                    Quaternion targetRotation = Quaternion.LookRotation(aimDirection);
+                    turret.turretHead.rotation = Quaternion.Slerp(turret.turretHead.rotation, targetRotation, Time.deltaTime * turretTurnSpeed);
+                }
+            }
+        }
+    }
+
     private void ShootLaser()
     {
-        Ray ray = shuttleCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        Vector3 laserEndPoint = ray.origin + (ray.direction * fireRange);
+        if (turrets.Length == 0) return;
 
-        // I store the raycast hit status in a boolean to separate physics detection from game loop logic
-        bool hitSomething = Physics.Raycast(ray, out RaycastHit hit, fireRange, meteorLayer);
+        // I get the turret that is supposed to fire this turn
+        ShipTurret activeTurret = turrets[currentTurretIndex];
+
+        // I advance the index, looping back to 0 if it reaches the end of the array (Alternating fire)
+        currentTurretIndex = (currentTurretIndex + 1) % turrets.Length;
+
+        if (activeTurret.muzzlePoint == null || activeTurret.laserLine == null) return;
+
+        // Calculate trajectory
+        Vector3 shootDirection = (currentAimPoint - activeTurret.muzzlePoint.position).normalized;
+        Vector3 laserEndPoint = activeTurret.muzzlePoint.position + (shootDirection * fireRange);
+
+        bool hitSomething = Physics.Raycast(activeTurret.muzzlePoint.position, shootDirection, out RaycastHit hit, fireRange, meteorLayer);
 
         if (hitSomething)
         {
             laserEndPoint = hit.point;
         }
 
-        // FIXED: I trigger the visual laser beam rendering BEFORE processing any target destruction.
-        // This guarantees the laser always renders on screen immediately, even if a script crash happens later.
-        if (laserLine != null)
-        {
-            StopAllCoroutines();
-            StartCoroutine(RenderLaserBeam(ray.origin - new Vector3(0f, 0.2f, 0f), laserEndPoint));
-        }
+        // I trigger the visual effect exclusively on the active turret's line renderer
+        StartCoroutine(RenderLaserBeam(activeTurret.laserLine, activeTurret.muzzlePoint.position, laserEndPoint));
 
-        // Now that the visual effect is safely fired, I process the gameplay mechanics of destroying the rock
+        // Handle impact
         if (hitSomething)
         {
             MeteorBehavior meteor = hit.collider.GetComponentInParent<MeteorBehavior>();
@@ -62,12 +121,12 @@ public class ShuttleShooter : MonoBehaviour
         }
     }
 
-    private IEnumerator RenderLaserBeam(Vector3 start, Vector3 end)
+    private IEnumerator RenderLaserBeam(LineRenderer line, Vector3 start, Vector3 end)
     {
-        laserLine.enabled = true;
-        laserLine.SetPosition(0, start);
-        laserLine.SetPosition(1, end);
+        line.enabled = true;
+        line.SetPosition(0, start);
+        line.SetPosition(1, end);
         yield return new WaitForSeconds(laserDuration);
-        laserLine.enabled = false;
+        line.enabled = false;
     }
 }

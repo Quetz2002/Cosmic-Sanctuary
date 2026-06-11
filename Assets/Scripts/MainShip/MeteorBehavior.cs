@@ -45,7 +45,7 @@ public class MeteorBehavior : MonoBehaviour
         }
 
         // FIXED: If we play this scene directly from the editor for fast testing, the GameManager won't exist.
-        // I add a conditional check to safely add currency only if the Instance exists, avoiding the game-breaking NullReferenceException.
+        // Added a conditional check to safely add currency only if the Instance exists, avoiding the game-breaking NullReferenceException.
         if (GameManager.Instance != null)
         {
             GameManager.Instance.cosmicMaterials += 1;
