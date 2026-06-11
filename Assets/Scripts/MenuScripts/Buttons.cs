@@ -13,4 +13,10 @@ public class Buttons : MonoBehaviour
             //load the game scene
             SceneManager.LoadScene("Nave");
     }
+
+    public void ExitGame()
+    {
+               //exit the game
+        Application.Quit();
+    }
 }
