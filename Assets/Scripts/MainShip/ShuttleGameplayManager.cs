@@ -39,7 +39,7 @@ public class ShuttleGameplayManager : MonoBehaviour
         if (targetIndex < 0 || targetIndex >= planetSceneNames.Length)
         {
             Debug.LogError("Invalid target planet index! Returning to main ship.");
-            SceneManager.LoadScene("ShipScene");
+            SceneManager.LoadScene("Nave");
         }
         else
         {

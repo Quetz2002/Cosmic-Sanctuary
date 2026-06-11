@@ -44,7 +44,7 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Whenever a scene loads, if it's the Ship scene, I rebuild the placed items
-        if (scene.name == "ShipScene") // CHANGE THIS TO YOUR ACTUAL SHIP SCENE NAME
+        if (scene.name == "Nave") // CHANGE THIS TO YOUR ACTUAL SHIP SCENE NAME
         {
             RebuildShipEnvironment();
         }

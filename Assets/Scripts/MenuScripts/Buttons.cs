@@ -11,7 +11,7 @@ public class Buttons : MonoBehaviour
     public void StartGame()
         {
             //load the game scene
-            SceneManager.LoadScene("Nave");
+            SceneManager.LoadScene("MainShip");
     }
 
     public void ExitGame()

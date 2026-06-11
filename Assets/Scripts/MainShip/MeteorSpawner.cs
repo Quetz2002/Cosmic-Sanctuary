@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MeteorSpawner : MonoBehaviour
 {
@@ -10,8 +11,17 @@ public class MeteorSpawner : MonoBehaviour
     public Vector3 spawnAreaCenter;
     public Vector3 spawnAreaSize;
 
+    private List<GameObject>[] pooledMeteors;
+
     private void Start()
     {
+        // Initialize the array of lists for pooling each meteor prefab type
+        pooledMeteors = new List<GameObject>[meteorPrefabs.Length];
+        for (int i = 0; i < meteorPrefabs.Length; i++)
+        {
+            pooledMeteors[i] = new List<GameObject>();
+        }
+
         // I invoke the spawning system repeatedly based on the custom interval rates
         InvokeRepeating(nameof(SpawnRandomMeteor), 0.5f, spawnInterval);
     }
@@ -28,10 +38,34 @@ public class MeteorSpawner : MonoBehaviour
         );
 
         Vector3 spawnPosition = transform.position + spawnAreaCenter + randomOffset;
-        GameObject selectedPrefab = meteorPrefabs[Random.Range(0, meteorPrefabs.Length)];
+        Quaternion spawnRotation = Random.rotation;
 
-        // I spawn the chosen meteor model into the world
-        Instantiate(selectedPrefab, spawnPosition, Random.rotation);
+        int index = Random.Range(0, meteorPrefabs.Length);
+        GameObject selectedPrefab = meteorPrefabs[index];
+
+        // Find an inactive object in the corresponding pool
+        GameObject meteor = null;
+        for (int i = 0; i < pooledMeteors[index].Count; i++)
+        {
+            if (pooledMeteors[index][i] != null && !pooledMeteors[index][i].activeSelf)
+            {
+                meteor = pooledMeteors[index][i];
+                break;
+            }
+        }
+
+        if (meteor != null)
+        {
+            meteor.transform.position = spawnPosition;
+            meteor.transform.rotation = spawnRotation;
+            meteor.SetActive(true);
+        }
+        else
+        {
+            // If no inactive object exists, spawn a new one and add it to the pool
+            meteor = Instantiate(selectedPrefab, spawnPosition, spawnRotation);
+            pooledMeteors[index].Add(meteor);
+        }
     }
 
     private void OnDrawGizmosSelected()
