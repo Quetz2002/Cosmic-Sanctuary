@@ -3,58 +3,114 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    public GameObject prefab;
+    public GameObject[] prefabs;
 
-    [SerializeField] private int spawnAmount;
-    [SerializeField] private float minDistance;
-    [SerializeField] private int maxAttempts;
+    public int cantidad;
+    private int totalInicial = 0;
 
-    public LayerMask terrain;
+    public BoxCollider zonaSpawn;
 
-    private Collider spawnArea;
-    private List<Vector3> spawnPositions = new List<Vector3>();
+    public float alturaRaycast;
+    public float distanciaRaycast;
+    public LayerMask capaSuelo;
 
-    void Awake()
-    {
-        spawnArea = GetComponent<Collider>();
-    }
+    public float distanciaMinima = 2f;
+
+    private List<GameObject> pool = new List<GameObject>();
+    private List<Vector3> posicionesUsadas = new List<Vector3>();
 
     void Start()
     {
-        SpawnPrefabs();
+        GenerarTodos();
     }
 
-    public void SpawnPrefabs()
+    void GenerarTodos()
     {
-        spawnPositions.Clear();
-        Bounds bounds = spawnArea.bounds;
+        int generados = 0;
+        int intentos = 0;
+        int maxIntentos = cantidad * 15;
 
-        for (int i = 0; i < spawnAmount; i++)
+        while (generados < cantidad && intentos < maxIntentos)
         {
-            for (int attempt = 0; attempt < maxAttempts; attempt++)
+            intentos++;
+
+            Vector3 posicion;
+            if (ObtenerPuntoEnSuelo(out posicion))
             {
-                Vector3 candidatePos = new Vector3(Random.Range(bounds.min.x, bounds.max.x), bounds.max.y + 5f, Random.Range(bounds.min.z, bounds.max.z));
+                if (!MuyCerca(posicion))
+                {
+                    GameObject prefab = prefabs[Random.Range(0, prefabs.Length)];
+                    GameObject obj = Instantiate(prefab, posicion, Quaternion.identity);
 
-                if (!Physics.Raycast(candidatePos, Vector3.down, out RaycastHit hit, Mathf.Infinity, terrain))
-                    continue;
-
-                if (IsTooClose(hit.point))
-                    continue;
-
-                Instantiate(prefab, hit.point, Random.rotation);
-                spawnPositions.Add(hit.point);
-                break;
+                    pool.Add(obj);
+                    posicionesUsadas.Add(posicion);
+                    generados++;
+                }
             }
         }
+
+        if (generados < cantidad)
+        {
+            totalInicial = pool.Count;
+        }
     }
 
-    private bool IsTooClose(Vector3 candidate)
+    bool ObtenerPuntoEnSuelo(out Vector3 resultado)
     {
-        foreach (Vector3 pos in spawnPositions)
+        resultado = Vector3.zero;
+
+        Bounds limites = zonaSpawn.bounds;
+        float x = Random.Range(limites.min.x, limites.max.x);
+        float z = Random.Range(limites.min.z, limites.max.z);
+
+        Vector3 origen = new Vector3(x, limites.max.y + alturaRaycast, z);
+        Ray ray = new Ray(origen, Vector3.down);
+        RaycastHit hit;
+
+        if (Physics.Raycast(ray, out hit, distanciaRaycast + alturaRaycast, capaSuelo))
         {
-            if (Vector3.Distance(candidate, pos) < minDistance)
-                return true;
+            resultado = hit.point;
+            return true;
         }
+
         return false;
+    }
+    bool MuyCerca(Vector3 punto)
+    {
+        foreach (Vector3 usada in posicionesUsadas)
+        {
+            if (Vector3.Distance(punto, usada) < distanciaMinima)
+                return true;   
+        }
+        return false;         
+    }
+
+    public void RetirarDePool(GameObject obj)
+    {
+        pool.Remove(obj);
+        obj.SetActive(false);
+
+
+        if (pool.Count == 0)
+        {
+
+        }
+    }
+
+    public int ObjetosRestantes()
+    {
+        return pool.Count;
+    }
+    public int TotalInicial()
+    {
+        return totalInicial;
+    }
+    public float ProgresoRecoleccion()
+    {
+        if (totalInicial == 0)
+            return 0f;
+
+        int recolectados = totalInicial - pool.Count;
+        return (float)recolectados / totalInicial;
     }
 }

@@ -1,23 +1,22 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Recolectar : MonoBehaviour
 {
-    [SerializeField]
-    private float distanciaMax;
+    public float distanciaMaxima = 3f;
     public Camera camara;
-    public int objRecogidos;
-    public int puntuacion;
+    public Spawner generador;
+    public int objetosCargando = 0;
+    public int puntuacionTotal = 0;
 
     private Controles controles;
-    private bool enZonaEnt = false;
-    
+    private bool enZonaEntrega = false;
+
     void Awake()
     {
         controles = new Controles();
         if (camara == null)
-        {
             camara = Camera.main;
-        }
     }
 
     void OnEnable()
@@ -29,38 +28,48 @@ public class Recolectar : MonoBehaviour
 
     void OnDisable()
     {
-
+        controles.Jugador.Disable();
     }
 
     void IntentarRecolectar()
     {
         Ray ray = new Ray(camara.transform.position, camara.transform.forward);
         RaycastHit hit;
-        if(Physics.Raycast(ray, out hit, distanciaMax))
+
+        if (Physics.Raycast(ray, out hit, distanciaMaxima))
         {
             if (hit.collider.CompareTag("Recolectable"))
             {
-                Destroy(hit.collider.gameObject, .5f);
-                objRecogidos++;
-                Debug.Log("Objetos cargando" + objRecogidos);
+                Absorcion absorcion = hit.collider.GetComponent<Absorcion>();
+
+                if (absorcion != null)
+                {
+                    absorcion.Iniciar(camara.transform, RecolectarFinal);
+                }
             }
         }
     }
 
+    void RecolectarFinal(GameObject obj)
+    {
+        generador.RetirarDePool(obj);
+        objetosCargando++;
+    }
+
     void IntentarDepositar()
     {
-        if (enZonaEnt && objRecogidos > 0)
+        if (enZonaEntrega && objetosCargando > 0)
         {
-            puntuacion += objRecogidos;
-            objRecogidos = 0;
+            puntuacionTotal += objetosCargando;
+            objetosCargando = 0;
         }
     }
+
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ZonaEntrega"))
         {
-            enZonaEnt = true;
-            Debug.Log("Entraste a la zona de entrega.");
+            enZonaEntrega = true;
         }
     }
 
@@ -68,7 +77,7 @@ public class Recolectar : MonoBehaviour
     {
         if (other.CompareTag("ZonaEntrega"))
         {
-            enZonaEnt = false;
+            enZonaEntrega = false;
         }
     }
 }
