@@ -4,40 +4,30 @@ using UnityEngine.UI;
 
 public class HologramMapController : MonoBehaviour
 {
-    [Header("Hologram UI Animation")]
-    public RectTransform hologramPanel;
-    public float revealSpeed = 5f;
+    [Header("Hologram Animation")]
+    public RectTransform hologramPanel; // The main panel containing the map graphics
+    public float revealSpeed = 2f;
 
-    [Header("Planet Selection")]
+    [Header("Selection Settings")]
     public Button confirmButton;
-    public Image[] planetButtons;
     public Color selectedColor = Color.cyan;
     public Color idleColor = Color.white;
+    public Image[] planetSelectionImages; // The 4 buttons visual representation
 
-    [Header("Camera Transition")]
-    public Transform mapCameraAnchor; // Where the camera goes to look at the map
-    public float cameraTransitionSpeed = 3f;
+    private int currentlySelectedPlanet = -1;
+    private bool isMenuOpen = false;
+    private Vector2 originalSize;
 
-    [HideInInspector] public bool isMapOpen = false; // Public so the player interaction knows
-
-    private int selectedPlanetIndex = -1;
-    private float maxPanelHeight;
-
+    // I reference the travel manager to trigger the world animation upon confirmation
     private SpaceTravelManager travelManager;
-    private Camera playerCamera;
-
-    // I use these to remember exactly where the camera was before moving it
-    private Vector3 originalCamLocalPos;
-    private Quaternion originalCamLocalRot;
-    private Transform playerCameraParent;
 
     private void Start()
     {
         travelManager = Object.FindFirstObjectByType<SpaceTravelManager>();
-        playerCamera = Camera.main;
 
-        maxPanelHeight = hologramPanel.rect.height;
-        hologramPanel.sizeDelta = new Vector2(hologramPanel.sizeDelta.x, 0f);
+        // I store the target size of the hologram panel and collapse it instantly
+        originalSize = hologramPanel.sizeDelta;
+        hologramPanel.sizeDelta = new Vector2(originalSize.x, 0f);
         hologramPanel.gameObject.SetActive(false);
 
         if (confirmButton != null) confirmButton.interactable = false;
@@ -45,147 +35,73 @@ public class HologramMapController : MonoBehaviour
 
     private void Update()
     {
-        // FIX: I only allow closing the map with Escape. 
-        // This prevents the "Double Input" bug where pressing F opens and closes the map in the same frame.
-        if (isMapOpen && Input.GetKeyDown(KeyCode.Escape))
+        // Will use M key to test opening/closing the starmap console for now
+        if (Input.GetKeyDown(KeyCode.M))
         {
-            CloseMap();
+            ToggleMap();
         }
     }
 
-    public void OpenMap()
+    public void ToggleMap()
     {
-        if (isMapOpen) return;
-        isMapOpen = true;
+        isMenuOpen = !isMenuOpen;
         StopAllCoroutines();
 
-        // Lock player movement
+        // Free or lock the mouse cursor so the player can interact with the hologram buttons
         PlayerController player = Object.FindFirstObjectByType<PlayerController>();
-        if (player != null) player.isEditingUI = true;
-
-        StartCoroutine(TransitionCameraAndOpenMap());
-    }
-
-    public void CloseMap()
-    {
-        if (!isMapOpen) return;
-        isMapOpen = false;
-        StopAllCoroutines();
-
-        // Release the cursor immediately so they can't click things while transitioning back
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
-
-        StartCoroutine(CloseMapAndTransitionCameraBack());
-    }
-
-    private IEnumerator TransitionCameraAndOpenMap()
-    {
-        // 1. Save original camera relative position and rotation
-        playerCameraParent = playerCamera.transform.parent;
-        originalCamLocalPos = playerCamera.transform.localPosition;
-        originalCamLocalRot = playerCamera.transform.localRotation;
-
-        // I detach the camera from the player temporarily to move it freely in the world
-        playerCamera.transform.SetParent(null);
-
-        float t = 0f;
-        Vector3 startPos = playerCamera.transform.position;
-        Quaternion startRot = playerCamera.transform.rotation;
-
-        // 2. Smoothly move the camera to the anchor point for a cozy feel
-        while (t < 1f)
+        if (player != null)
         {
-            t += Time.deltaTime * cameraTransitionSpeed;
-            // I use SmoothStep to give it a nice ease-in and ease-out acceleration
-            float curve = Mathf.SmoothStep(0f, 1f, t);
-            playerCamera.transform.position = Vector3.Lerp(startPos, mapCameraAnchor.position, curve);
-            playerCamera.transform.rotation = Quaternion.Slerp(startRot, mapCameraAnchor.rotation, curve);
-            yield return null;
+            player.isEditingUI = isMenuOpen;
+            Cursor.lockState = isMenuOpen ? CursorLockMode.None : CursorLockMode.Locked;
+            Cursor.visible = isMenuOpen;
         }
 
-        // Snap exactly to target just in case
-        playerCamera.transform.position = mapCameraAnchor.position;
-        playerCamera.transform.rotation = mapCameraAnchor.rotation;
-
-        // Unlock mouse for UI interaction now that camera is settled
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-
-        // 3. Open the Hologram UI
-        hologramPanel.gameObject.SetActive(true);
-        t = 0f;
-        float currentHeight = 0f;
-        while (t < 1f)
-        {
-            t += Time.deltaTime * revealSpeed;
-            float newHeight = Mathf.Lerp(currentHeight, maxPanelHeight, t);
-            hologramPanel.sizeDelta = new Vector2(hologramPanel.sizeDelta.x, newHeight);
-            yield return null;
-        }
-        hologramPanel.sizeDelta = new Vector2(hologramPanel.sizeDelta.x, maxPanelHeight);
+        StartCoroutine(AnimateHologram(isMenuOpen));
     }
 
-    private IEnumerator CloseMapAndTransitionCameraBack()
+    private IEnumerator AnimateHologram(bool open)
     {
-        // 1. Collapse Hologram UI
-        float t = 0f;
+        if (open) hologramPanel.gameObject.SetActive(true);
+
         float currentHeight = hologramPanel.sizeDelta.y;
+        float targetHeight = open ? originalSize.y : 0f;
+        float t = 0f;
+
+        // Smoothly interpolate the vertical height to give that cool "revelation from bottom to top" effect
         while (t < 1f)
         {
             t += Time.deltaTime * revealSpeed;
-            float newHeight = Mathf.Lerp(currentHeight, 0f, t);
-            hologramPanel.sizeDelta = new Vector2(hologramPanel.sizeDelta.x, newHeight);
-            yield return null;
-        }
-        hologramPanel.gameObject.SetActive(false);
-
-        // 2. Smoothly move camera back to the player's head
-        t = 0f;
-        Vector3 startPos = playerCamera.transform.position;
-        Quaternion startRot = playerCamera.transform.rotation;
-
-        while (t < 1f)
-        {
-            t += Time.deltaTime * cameraTransitionSpeed;
-            float curve = Mathf.SmoothStep(0f, 1f, t);
-
-            // I constantly calculate the target world position in case the player object shifted
-            Vector3 targetWorldPos = playerCameraParent.TransformPoint(originalCamLocalPos);
-            Quaternion targetWorldRot = playerCameraParent.rotation * originalCamLocalRot;
-
-            playerCamera.transform.position = Vector3.Lerp(startPos, targetWorldPos, curve);
-            playerCamera.transform.rotation = Quaternion.Slerp(startRot, targetWorldRot, curve);
+            float newHeight = Mathf.Lerp(currentHeight, targetHeight, t);
+            hologramPanel.sizeDelta = new Vector2(originalSize.x, newHeight);
             yield return null;
         }
 
-        // 3. Re-parent the camera back to the player and reset its local values perfectly
-        playerCamera.transform.SetParent(playerCameraParent);
-        playerCamera.transform.localPosition = originalCamLocalPos;
-        playerCamera.transform.localRotation = originalCamLocalRot;
-
-        // Give movement control back to the player
-        PlayerController player = Object.FindFirstObjectByType<PlayerController>();
-        if (player != null) player.isEditingUI = false;
+        if (!open) hologramPanel.gameObject.SetActive(false);
     }
 
-    public void SelectPlanet(int index)
+    public void SelectPlanet(int planetIndex)
     {
-        GameManager.Instance.currentTargetPlanetIndex = index; // Register the target planet globally
-        selectedPlanetIndex = index;
-        for (int i = 0; i < planetButtons.Length; i++)
+        // Handle the selection of one of the 4 planets from the UI buttons
+        currentlySelectedPlanet = planetIndex;
+
+        // Update the visual highlights of the buttons to emphasize selection
+        for (int i = 0; i < planetSelectionImages.Length; i++)
         {
-            planetButtons[i].color = (i == index) ? selectedColor : idleColor;
+            planetSelectionImages[i].color = (i == planetIndex) ? selectedColor : idleColor;
         }
+
         if (confirmButton != null) confirmButton.interactable = true;
     }
 
-    public void ConfirmSelection()
+    public void ConfirmTravel()
     {
-        if (selectedPlanetIndex != -1)
+        if (currentlySelectedPlanet != -1)
         {
-            travelManager.StartTravelAnimation(selectedPlanetIndex);
-            CloseMap(); // Close the map gracefully and fly the camera back before traveling
+            // Tell the space travel manager to execute the movement animation outside the window
+            travelManager.StartTravelAnimation(currentlySelectedPlanet);
+
+            // Automatically close the map after confirming the destination
+            ToggleMap();
         }
     }
 }
