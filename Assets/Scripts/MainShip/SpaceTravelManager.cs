@@ -30,12 +30,6 @@ public class SpaceTravelManager : MonoBehaviour
         }
     }
 
-    private IEnumerator AnimateSpaceFlight(bool isTraveling)
-    {
-        // This is a placeholder signature matching the caller context
-        yield return null;
-    }
-
     private IEnumerator AnimateSpaceFlight(int index)
     {
         // I disable any previously active planet to ensure only our new destination exists

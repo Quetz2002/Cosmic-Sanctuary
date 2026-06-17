@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour
     [Header("Ship State")]
     public List<PlacedItemData> placedItemsData = new List<PlacedItemData>();
 
+    [Header("Travel State")]
+    public int currentTargetPlanetIndex = -1;
+
     private void Awake()
     {
         // I ensure this manager survives all scene loads

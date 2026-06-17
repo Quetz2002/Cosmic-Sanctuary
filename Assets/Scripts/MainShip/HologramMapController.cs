@@ -97,6 +97,12 @@ public class HologramMapController : MonoBehaviour
     {
         if (currentlySelectedPlanet != -1)
         {
+            // Set the target planet index in the GameManager for the voyage sequence
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.currentTargetPlanetIndex = currentlySelectedPlanet;
+            }
+
             // Tell the space travel manager to execute the movement animation outside the window
             travelManager.StartTravelAnimation(currentlySelectedPlanet);
 

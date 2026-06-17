@@ -8,6 +8,7 @@ public class Pickup : MonoBehaviour
 
     public float throwForce = 500f; //force at which the object is thrown at
     public float pickUpRange = 5f; //how far the player can pickup the object from
+    public KeyCode throwKey = KeyCode.G; // Key used to throw the object (G by default, to avoid conflict with R-rotation in building mode)
 
     private GameObject trash;
     private Rigidbody trashRb;
@@ -42,7 +43,7 @@ public class Pickup : MonoBehaviour
         if (trash != null) //if player is holding object
         {
             HoldPosition(); //keep object position at holdPos
-            if (Input.GetKeyDown(KeyCode.R) && canDrop == true) //used to throw, change this if you want another button to be used)
+            if (Input.GetKeyDown(throwKey) && canDrop == true) //used to throw (configurable via inspector)
             {
                 StopClipping();
                 ThrowObject();
