@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,6 +20,8 @@ public class Spawner : MonoBehaviour
     private List<GameObject> pool = new List<GameObject>();
     private List<Vector3> posicionesUsadas = new List<Vector3>();
 
+    public event Action AlRecolectarTodo;
+
     void Start()
     {
         GenerarTodos();
@@ -39,7 +42,7 @@ public class Spawner : MonoBehaviour
             {
                 if (!MuyCerca(posicion))
                 {
-                    GameObject prefab = prefabs[Random.Range(0, prefabs.Length)];
+                    GameObject prefab = prefabs[UnityEngine.Random.Range(0, prefabs.Length)];
                     GameObject obj = Instantiate(prefab, posicion, Quaternion.identity);
 
                     pool.Add(obj);
@@ -48,11 +51,7 @@ public class Spawner : MonoBehaviour
                 }
             }
         }
-
-        if (generados < cantidad)
-        {
-            totalInicial = pool.Count;
-        }
+        totalInicial = pool.Count;
     }
 
     bool ObtenerPuntoEnSuelo(out Vector3 resultado)
@@ -60,8 +59,8 @@ public class Spawner : MonoBehaviour
         resultado = Vector3.zero;
 
         Bounds limites = zonaSpawn.bounds;
-        float x = Random.Range(limites.min.x, limites.max.x);
-        float z = Random.Range(limites.min.z, limites.max.z);
+        float x = UnityEngine.Random.Range(limites.min.x, limites.max.x);
+        float z = UnityEngine.Random.Range(limites.min.z, limites.max.z);
 
         Vector3 origen = new Vector3(x, limites.max.y + alturaRaycast, z);
         Ray ray = new Ray(origen, Vector3.down);
@@ -90,10 +89,9 @@ public class Spawner : MonoBehaviour
         pool.Remove(obj);
         obj.SetActive(false);
 
-
         if (pool.Count == 0)
         {
-
+            AlRecolectarTodo.Invoke();
         }
     }
 

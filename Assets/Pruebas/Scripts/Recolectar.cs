@@ -6,6 +6,7 @@ public class Recolectar : MonoBehaviour
     public float distanciaMaxima = 3f;
     public Camera camara;
     public Spawner generador;
+    public TextoFlotante textoEntrega;
     public int objetosCargando = 0;
     public int puntuacionTotal = 0;
 
@@ -70,6 +71,8 @@ public class Recolectar : MonoBehaviour
         if (other.CompareTag("ZonaEntrega"))
         {
             enZonaEntrega = true;
+            if (textoEntrega != null)
+                textoEntrega.Mostrar();
         }
     }
 
@@ -78,6 +81,8 @@ public class Recolectar : MonoBehaviour
         if (other.CompareTag("ZonaEntrega"))
         {
             enZonaEntrega = false;
+            if (textoEntrega != null)
+                textoEntrega.Ocultar();
         }
     }
 }

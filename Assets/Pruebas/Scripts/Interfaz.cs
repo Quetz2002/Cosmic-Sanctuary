@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class InterfazJuego : MonoBehaviour
+public class Interfaz : MonoBehaviour
 {
     public Movimiento movimiento;      
     public Recolectar recolector;       

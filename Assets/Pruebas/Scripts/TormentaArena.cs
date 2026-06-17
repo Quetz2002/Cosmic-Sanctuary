@@ -8,14 +8,12 @@ public class TormentaArena : MonoBehaviour
     [Range(0f, 1f)]
     public float intensidad = 1f;
 
-    public bool controlarPorProgreso = true;
     [Range(0f, 1f)]
     public float umbralInicioDisminucion = 0.5f;
     public float velocidadCambio = 1f;
 
     public float emisionMaxima = 400f;
 
-    public bool controlarNiebla = true;
     public float densidadMaxima = 0.03f;
 
     private ParticleSystem.EmissionModule emision;
@@ -27,20 +25,18 @@ public class TormentaArena : MonoBehaviour
 
         emision = particulas.emission;
 
-        if (controlarNiebla)
-        {
-            RenderSettings.fog = true;
-            RenderSettings.fogMode = FogMode.ExponentialSquared;
-        }
+        RenderSettings.fog = true;
+        RenderSettings.fogMode = FogMode.ExponentialSquared;
     }
 
     void Update()
     {
-        if (controlarPorProgreso && generador != null)
+        if (generador != null)
         {
             float intensidadObjetivo = CalcularIntensidadPorProgreso();
             intensidad = Mathf.MoveTowards(intensidad, intensidadObjetivo, velocidadCambio * Time.deltaTime);
         }
+
         AplicarIntensidad();
     }
 
@@ -61,8 +57,7 @@ public class TormentaArena : MonoBehaviour
     void AplicarIntensidad()
     {
         emision.rateOverTime = emisionMaxima * intensidad;
-
-        if (controlarNiebla)
-            RenderSettings.fogDensity = densidadMaxima * intensidad;
+        RenderSettings.fogDensity = densidadMaxima * intensidad;
+        RenderSettings.fog = intensidad > 0.001f;
     }
 }
