@@ -1,11 +1,25 @@
 using UnityEngine;
 
+// I define an enum to categorize where this specific item is allowed to be placed
+public enum PlacementType { Floor, Wall }
+
 [CreateAssetMenu(fileName = "New Reward", menuName = "Cosmic Sanctuary/Reward Item")]
 public class RewardItem : ScriptableObject
 {
-    // I am defining the core data for each reward we find on planets
+    public string itemID;
     public string itemName;
-    public GameObject placementPrefab; // The full-size prefab for the Ship
-    public GameObject miniaturePrefab; // The small version for Giovanni's Shuttle
-    public Vector3 extents = new Vector3(0.5f, 0.5f, 0.5f); // Used for collision checking
+    public Sprite uiIcon;
+
+    [Header("Placement Rules")]
+    public PlacementType placementType = PlacementType.Floor; // Default is floor
+
+    [Header("Prefabs")]
+    public GameObject placementPrefab;
+    public GameObject miniaturePrefab;
+
+    [Header("Collision & Physics")]
+    public Vector3 extents = new Vector3(0.25f, 0.25f, 0.25f);
+
+    // I added this so we can accurately tell the physics engine where the center of the mesh is relative to the base/back pivot
+    public Vector3 centerOffset = new Vector3(0f, 0.25f, 0f);
 }
