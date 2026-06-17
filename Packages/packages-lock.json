@@ -16,7 +16,11 @@
       }
     },
     "com.unity.ai.navigation": {
+<<<<<<< HEAD
       "version": "2.0.10",
+=======
+      "version": "2.0.9",
+>>>>>>> QuetzFixes
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -61,7 +65,11 @@
       "dependencies": {}
     },
     "com.unity.ide.rider": {
+<<<<<<< HEAD
       "version": "3.0.39",
+=======
+      "version": "3.0.38",
+>>>>>>> QuetzFixes
       "depth": 0,
       "source": "registry",
       "dependencies": {
@@ -70,11 +78,11 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.ide.visualstudio": {
-      "version": "2.0.27",
+      "version": "2.0.25",
       "depth": 0,
       "source": "registry",
       "dependencies": {
-        "com.unity.test-framework": "1.1.33"
+        "com.unity.test-framework": "1.1.31"
       },
       "url": "https://packages.unity.com"
     },
@@ -213,7 +221,7 @@
       "url": "https://packages.unity.com"
     },
     "com.unity.timeline": {
-      "version": "1.8.12",
+      "version": "1.8.9",
       "depth": 0,
       "source": "registry",
       "dependencies": {

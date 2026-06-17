@@ -5,7 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - NPC
-  - Recolectable
+  - canPickUP
   layers:
   - Default
   - TransparentFX
@@ -15,8 +15,8 @@ TagManager:
   - UI
   - PlaceableSurface
   - NotPlaceableSurface
-  - Interactable
-  - Meteors
+  - 
+  - 
   - 
   - 
   - 

@@ -12,8 +12,13 @@ MonoImporter:
   assetBundleVariant: 
 AssetOrigin:
   serializedVersion: 1
+<<<<<<< HEAD
   productId: 127325
   packageName: Particle Pack
+=======
+  productId: 191449
+  packageName: Simple Water Shader URP
+>>>>>>> QuetzFixes
   packageVersion: 
   assetPath: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
   uploadId: 0
