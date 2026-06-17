@@ -1,15 +1,15 @@
 using UnityEngine;
-using TMPro; // Usaremos TextMeshPro para un texto HD
+using TMPro;
 
 public class PlayerInteraction : MonoBehaviour
 {
     [Header("Interaction Settings")]
     public float interactRange = 3f;
-    public LayerMask interactableLayer; // We will create a layer just for panels/terminals
+    public LayerMask interactableLayer; // Layer containing our panels and doors
 
     [Header("UI References")]
-    public GameObject crosshair; // Optional: A small dot in the center of the screen
-    public TextMeshProUGUI interactionText; // The "Press F to..." text
+    public GameObject crosshair;
+    public TextMeshProUGUI interactionText;
 
     private Camera playerCamera;
     private HologramMapController mapController;
@@ -17,16 +17,13 @@ public class PlayerInteraction : MonoBehaviour
     private void Start()
     {
         playerCamera = Camera.main;
-
-        // I hide the prompt text at the start of the game
         if (interactionText != null) interactionText.gameObject.SetActive(false);
-
         mapController = Object.FindFirstObjectByType<HologramMapController>();
     }
 
     private void Update()
     {
-        // I don't want to check for interactions if the map is already open
+        // I don't want to scan for world interactions if the star map is currently active
         if (mapController != null && mapController.isMapOpen)
         {
             if (interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(false);
@@ -34,29 +31,33 @@ public class PlayerInteraction : MonoBehaviour
             return;
         }
 
-        // Make sure the crosshair is visible when exploring
         if (crosshair != null && !crosshair.activeSelf) crosshair.SetActive(true);
 
-        // I cast a ray from the center of my screen
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
 
+        // I cast a single raycast to detect what interactive element sits in front of the player
         if (Physics.Raycast(ray, out RaycastHit hit, interactRange, interactableLayer))
         {
-            // If I am looking at the console, I show the prompt
-            interactionText.gameObject.SetActive(true);
-            interactionText.text = "Press F to open Map";
+            // I check if the hit object inherits from our clean abstract interactable structure
+            BaseInteractable interactable = hit.collider.GetComponent<BaseInteractable>();
 
-            // I listen for the interact key
-            if (Input.GetKeyDown(KeyCode.F))
+            if (interactable != null)
             {
-                interactionText.gameObject.SetActive(false);
-                mapController.OpenMap(); // Tell the map to take over
+                if (!interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(true);
+
+                // FIXED: I dynamically fetch the context-aware prompt text calculated by the object itself
+                interactionText.text = interactable.GetInteractionPrompt();
+
+                // I listen for the interaction input key trigger
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    interactable.TriggerInteraction();
+                }
             }
         }
         else
         {
-            // If I look away, hide the prompt
-            interactionText.gameObject.SetActive(false);
+            if (interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(false);
         }
     }
 }

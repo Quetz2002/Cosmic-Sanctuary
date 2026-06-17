@@ -2444,7 +2444,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93de69cb19636c47afebe1a8b93f6b4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShuttleGameplayManager
-  voyageDuration: 60
+  voyageDuration: 25
   planetSceneNames:
   - Aurora Palm
   - Planet
