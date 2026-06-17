@@ -1,5 +1,4 @@
 using UnityEngine;
-using System.Collections;
 
 public class MeteorBehavior : MonoBehaviour
 {
@@ -12,22 +11,11 @@ public class MeteorBehavior : MonoBehaviour
     public GameObject explosionParticlePrefab;
 
     private float finalSpeed;
-    private Coroutine deactivateCoroutine;
 
-    private void OnEnable()
+    private void Start()
     {
         finalSpeed = Random.Range(minSpeed, maxSpeed);
-        if (deactivateCoroutine != null)
-        {
-            StopCoroutine(deactivateCoroutine);
-        }
-        deactivateCoroutine = StartCoroutine(DeactivateAfterDelay(8f));
-    }
-
-    private IEnumerator DeactivateAfterDelay(float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        gameObject.SetActive(false);
+        Destroy(gameObject, 8f);
     }
 
     private void Update()
@@ -56,13 +44,7 @@ public class MeteorBehavior : MonoBehaviour
             Debug.LogWarning("GameManager instance not found. Materials were not added, but the meteor will still be destroyed safely.");
         }
 
-        if (deactivateCoroutine != null)
-        {
-            StopCoroutine(deactivateCoroutine);
-            deactivateCoroutine = null;
-        }
-
-        // I instantly deactivate the meteor instance from active processing loops
-        gameObject.SetActive(false);
+        // I instantly wipe the meteor instance from active processing loops
+        Destroy(gameObject);
     }
 }

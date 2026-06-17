@@ -42,7 +42,6 @@ public class ShapeGenerator {
             }
         }
         elevation  = settings.planetRadius * (1 + elevation);
-        elevationMinMax.AddValue(elevation);
         return pointOnUnitSphere * elevation;
     }
 }

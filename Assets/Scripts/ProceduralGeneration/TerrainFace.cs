@@ -50,10 +50,7 @@ public class TerrainFace
         mesh.vertices = vertices;
         mesh.triangles = triangles;
         mesh.RecalculateNormals();
-        if (uv != null && uv.Length == vertices.Length)
-        {
-            mesh.uv = uv;
-        }
+        mesh.uv = uv;
     }   
 
     public void UpdateUVs(ColourGenerator colourGenerator)
