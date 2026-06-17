@@ -48,7 +48,7 @@ public class HologramUIController : MonoBehaviour
         UpdateHighlight();
 
         // I tell the player controller to freeze camera movement if UI is open
-        FindObjectOfType<PlayerController>().isEditingUI = isUIAccessible;
+        Object.FindFirstObjectByType<PlayerController>().isEditingUI = isUIAccessible;
     }
 
     private void MoveSelection(int direction)
@@ -71,10 +71,10 @@ public class HologramUIController : MonoBehaviour
 
     private void ConfirmSelection()
     {
-        // I grab the actual reward from the GameManager and pass it to the Placement System
-        if (GameManager.Instance.collectedRewards.Count > currentIndex)
+        // I changed 'collectedRewards' to 'unlockedRewards' to match the new GameManager structure
+        if (GameManager.Instance.unlockedRewards.Count > currentIndex)
         {
-            RewardItem selectedItem = GameManager.Instance.collectedRewards[currentIndex];
+            RewardItem selectedItem = GameManager.Instance.unlockedRewards[currentIndex];
             placementSystem.StartPlacingItem(selectedItem);
             ToggleUI(); // Close the UI after picking an item
         }
