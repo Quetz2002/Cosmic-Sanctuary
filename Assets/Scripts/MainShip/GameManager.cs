@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     [Header("Player Inventory")]
     public List<RewardItem> unlockedRewards = new List<RewardItem>();
     public int cosmicMaterials = 0; // The resource used for customization
+    public int currentTargetPlanetIndex = -1; // Tracks which planet we are currently flying towards
 
     [Header("Ship State")]
     public List<PlacedItemData> placedItemsData = new List<PlacedItemData>();
@@ -91,15 +92,20 @@ public class GameManager : MonoBehaviour
             {
                 GameObject spawned = Instantiate(originalItem.placementPrefab, data.position, data.rotation);
 
-                // Assign to obstacles layer
-                SetLayerRecursively(spawned, LayerMask.NameToLayer("Obstacles"));
+                // FIXED: Assign to your specific obstacles layer
+                SetLayerRecursively(spawned, LayerMask.NameToLayer("NotPlaceableSurface"));
 
-                // Apply customizations
                 PlacedRewardBehavior behavior = spawned.GetComponent<PlacedRewardBehavior>();
                 if (behavior != null)
                 {
                     behavior.rewardID = data.itemID;
-                    behavior.ApplyCustomization(data.customColor, data.emissionIntensity);
+
+                    // FIXED: I only apply customization if the player actually used the C key (emission > -1)
+                    // Otherwise, it keeps your beautiful original material
+                    if (data.emissionIntensity > -1f)
+                    {
+                        behavior.ApplyCustomization(data.customColor, data.emissionIntensity);
+                    }
                 }
             }
         }
