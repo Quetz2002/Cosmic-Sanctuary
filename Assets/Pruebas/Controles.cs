@@ -127,6 +127,24 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Saltar"",
+                    ""type"": ""Button"",
+                    ""id"": ""ab416996-1df5-4124-b7b3-63a8675ba7cf"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Sprint"",
+                    ""type"": ""Button"",
+                    ""id"": ""58c43911-43ff-4fe4-98ed-bacc06f1ca6b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -217,6 +235,28 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""action"": ""Depositar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6ae76c3c-8b85-4cb5-9554-3110dd990e0e"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Saltar"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a733796d-dc28-465f-929e-aded78bbb644"",
+                    ""path"": ""<Keyboard>/leftShift"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Sprint"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -229,6 +269,8 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         m_Jugador_Mirar = m_Jugador.FindAction("Mirar", throwIfNotFound: true);
         m_Jugador_Recolectar = m_Jugador.FindAction("Recolectar", throwIfNotFound: true);
         m_Jugador_Depositar = m_Jugador.FindAction("Depositar", throwIfNotFound: true);
+        m_Jugador_Saltar = m_Jugador.FindAction("Saltar", throwIfNotFound: true);
+        m_Jugador_Sprint = m_Jugador.FindAction("Sprint", throwIfNotFound: true);
     }
 
     ~@Controles()
@@ -313,6 +355,8 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     private readonly InputAction m_Jugador_Mirar;
     private readonly InputAction m_Jugador_Recolectar;
     private readonly InputAction m_Jugador_Depositar;
+    private readonly InputAction m_Jugador_Saltar;
+    private readonly InputAction m_Jugador_Sprint;
     /// <summary>
     /// Provides access to input actions defined in input action map "Jugador".
     /// </summary>
@@ -340,6 +384,14 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Jugador/Depositar".
         /// </summary>
         public InputAction @Depositar => m_Wrapper.m_Jugador_Depositar;
+        /// <summary>
+        /// Provides access to the underlying input action "Jugador/Saltar".
+        /// </summary>
+        public InputAction @Saltar => m_Wrapper.m_Jugador_Saltar;
+        /// <summary>
+        /// Provides access to the underlying input action "Jugador/Sprint".
+        /// </summary>
+        public InputAction @Sprint => m_Wrapper.m_Jugador_Sprint;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -378,6 +430,12 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Depositar.started += instance.OnDepositar;
             @Depositar.performed += instance.OnDepositar;
             @Depositar.canceled += instance.OnDepositar;
+            @Saltar.started += instance.OnSaltar;
+            @Saltar.performed += instance.OnSaltar;
+            @Saltar.canceled += instance.OnSaltar;
+            @Sprint.started += instance.OnSprint;
+            @Sprint.performed += instance.OnSprint;
+            @Sprint.canceled += instance.OnSprint;
         }
 
         /// <summary>
@@ -401,6 +459,12 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Depositar.started -= instance.OnDepositar;
             @Depositar.performed -= instance.OnDepositar;
             @Depositar.canceled -= instance.OnDepositar;
+            @Saltar.started -= instance.OnSaltar;
+            @Saltar.performed -= instance.OnSaltar;
+            @Saltar.canceled -= instance.OnSaltar;
+            @Sprint.started -= instance.OnSprint;
+            @Sprint.performed -= instance.OnSprint;
+            @Sprint.canceled -= instance.OnSprint;
         }
 
         /// <summary>
@@ -469,5 +533,19 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnDepositar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Saltar" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSaltar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Sprint" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnSprint(InputAction.CallbackContext context);
     }
 }
