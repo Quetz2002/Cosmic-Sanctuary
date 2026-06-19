@@ -20,4 +20,9 @@ public class TrashSpawner : MonoBehaviour
             Instantiate(trashYellow, transform.position, Quaternion.identity);
         }
     }
+
+    void Start()
+    {
+        SpawnTrash(5, 3, 2); // Example: Spawns 5 black, 3 green, and 2 yellow trash items
+    }
 }

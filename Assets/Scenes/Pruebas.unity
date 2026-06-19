@@ -10575,7 +10575,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spawner
   prefabs:
-  - {fileID: 3754484106234982840, guid: 42a3958a6b559364899658944ec7675d, type: 3}
+  - {fileID: 3754484106234982840, guid: 4e04438e521850a4ea01b68ed540a6bb, type: 3}
   - {fileID: 4525853563789637828, guid: 64672337e53f7194383d5d94a868f7cc, type: 3}
   cantidad: 2
   zonaSpawn: {fileID: 2090558962}
