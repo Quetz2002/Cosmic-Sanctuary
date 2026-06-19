@@ -131,6 +131,6 @@ AssetOrigin:
   productId: 176293
   packageName: SciFi Space Station Heavy
   packageVersion: 1.1.1
-  assetPath: Assets/_DLNK/_DLNK Source/_DLNK Libraries/[dlnk Script Library]/TopDown
+  assetPath: Assets/Nave/_DLNK/_DLNK Source/_DLNK Libraries/[dlnk Script Library]/TopDown
     Wizard/Source/Editor Resources/Trigger_map.png
   uploadId: 629740

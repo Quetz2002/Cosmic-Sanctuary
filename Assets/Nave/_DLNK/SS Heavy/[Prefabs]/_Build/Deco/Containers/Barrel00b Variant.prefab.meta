@@ -10,5 +10,6 @@ AssetOrigin:
   productId: 176293
   packageName: SciFi Space Station Heavy
   packageVersion: 1.1.1
-  assetPath: Assets/_DLNK/SS Heavy/[Prefabs]/_Build/Deco/Containers/Barrel00b Variant.prefab
+  assetPath: Assets/Nave/_DLNK/SS Heavy/[Prefabs]/_Build/Deco/Containers/Barrel00b
+    Variant.prefab
   uploadId: 629740
