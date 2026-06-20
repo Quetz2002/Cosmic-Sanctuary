@@ -80,6 +80,10 @@ namespace Giovanni.Gameplay
                 return;
             }
 
+            if (playerCamera == null)
+            {
+                playerCamera = Camera.main;
+            }
             if (playerCamera == null) return;
 
             Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
@@ -87,7 +91,7 @@ namespace Giovanni.Gameplay
 
             if (Physics.Raycast(ray, out hit, maxGrabDistance))
             {
-                CollectableItem collectable = hit.collider.GetComponent<CollectableItem>();
+                CollectableItem collectable = hit.collider.GetComponentInParent<CollectableItem>();
                 if (collectable != null)
                 {
                     // Start suction animation if not already being collected

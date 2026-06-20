@@ -8,8 +8,12 @@ public class ShuttleGameplayManager : MonoBehaviour
     public float voyageDuration = 20f; // Total time of the shooter sequence
 
     [Header("Planet Scene Mapping")]
-    // I match the planet indices (0,1,2,3) to their respective scene build names
-    public string[] planetSceneNames = new string[] { "Planet_Aurora", "Planet_Cryon", "Planet_Ignis", "Planet_Mars" };
+    // I match the planet indices to their respective scene build names
+    public string[] planetSceneNames = new string[] { "Planet_Aurora", "Planet_Cryon", "Planet_Ignis", "Planet_Mars", "Pruebas" };
+
+    [Header("Debug/Testing")]
+    [Tooltip("If GameManager is not active or target index is -1, load this planet index instead of returning to main ship. Set to -1 to disable.")]
+    public int defaultPlanetIndex = -1;
 
     private bool voyageFinished = false;
 
@@ -33,24 +37,50 @@ public class ShuttleGameplayManager : MonoBehaviour
         if (voyageFinished) return;
         voyageFinished = true;
 
-        int targetIndex = -1;
+        string originScene = "";
         if (GameManager.Instance != null)
         {
-            targetIndex = GameManager.Instance.currentTargetPlanetIndex;
+            originScene = GameManager.Instance.previousSceneName;
         }
 
-        // Safety fallback: if no planet index was saved, I return the player to the Ship
-        if (targetIndex < 0 || targetIndex >= planetSceneNames.Length)
+        string destinationScene = "";
+
+        if (originScene == "MainShip")
         {
-            Debug.LogError("Invalid target planet index! Returning to main ship.");
-            SceneManager.LoadScene("ShipScene");
+            destinationScene = "Pruebas";
+            Debug.Log("[ShuttleGameplayManager] Traveling from MainShip. Destination set to Pruebas.");
+        }
+        else if (originScene == "Pruebas")
+        {
+            destinationScene = "MainShip";
+            Debug.Log("[ShuttleGameplayManager] Returning from Pruebas. Destination set to MainShip.");
         }
         else
         {
-            // I fetch the correct scene name and load the planetary exploration zone
-            string destinationScene = planetSceneNames[targetIndex];
-            Debug.Log("Arriving at destination! Loading scene: " + destinationScene);
-            SceneManager.LoadScene(destinationScene);
+            // If we came from another planet or started in Shuttle scene, use standard target index or debug fallback
+            int targetIndex = -1;
+            if (GameManager.Instance != null)
+            {
+                targetIndex = GameManager.Instance.currentTargetPlanetIndex;
+            }
+
+            if ((targetIndex < 0 || targetIndex >= planetSceneNames.Length) && defaultPlanetIndex >= 0 && defaultPlanetIndex < planetSceneNames.Length)
+            {
+                targetIndex = defaultPlanetIndex;
+                Debug.Log($"[ShuttleGameplayManager] GameManager target index was invalid. Using debug defaultPlanetIndex: {targetIndex} ({planetSceneNames[targetIndex]})");
+            }
+
+            if (targetIndex >= 0 && targetIndex < planetSceneNames.Length)
+            {
+                destinationScene = planetSceneNames[targetIndex];
+            }
+            else
+            {
+                destinationScene = "MainShip";
+            }
         }
+
+        Debug.Log("Arriving at destination! Loading scene: " + destinationScene);
+        SceneManager.LoadScene(destinationScene);
     }
 }

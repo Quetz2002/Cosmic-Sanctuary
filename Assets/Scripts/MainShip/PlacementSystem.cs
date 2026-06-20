@@ -188,7 +188,10 @@ public class PlacementSystem : MonoBehaviour
             if (behavior != null) behavior.rewardID = currentItemData.itemID;
 
             // I save it in the global persistent data
-            GameManager.Instance.SavePlacedItem(currentItemData.itemID, placedObject.transform.position, placedObject.transform.rotation, Color.clear, -1f);
+            if (GameManager.Instance != null)
+            {
+                GameManager.Instance.SavePlacedItem(currentItemData.itemID, placedObject.transform.position, placedObject.transform.rotation, Color.clear, -1f);
+            }
 
             Destroy(currentPreview);
             isPlacingMode = false;
@@ -206,7 +209,10 @@ public class PlacementSystem : MonoBehaviour
 
                 if (behavior != null)
                 {
-                    GameManager.Instance.RemovePlacedItem(behavior.rewardID);
+                    if (GameManager.Instance != null)
+                    {
+                        GameManager.Instance.RemovePlacedItem(behavior.rewardID);
+                    }
                     Destroy(behavior.gameObject);
                 }
             }

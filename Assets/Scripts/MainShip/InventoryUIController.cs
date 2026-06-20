@@ -45,6 +45,8 @@ public class InventoryUIController : MonoBehaviour
         // I clean the existing buttons
         foreach (Transform child in contentParent) Destroy(child.gameObject);
 
+        if (GameManager.Instance == null) return;
+
         // I loop through all unlocked rewards in the GameManager
         foreach (RewardItem item in GameManager.Instance.unlockedRewards)
         {

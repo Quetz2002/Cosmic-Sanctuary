@@ -27,7 +27,7 @@ namespace Giovanni.Gameplay
         private Vector3 originalScale;
         private bool isAbsorbing = false;
 
-        private void Start()
+        private void Awake()
         {
             originalScale = transform.localScale;
             // Generate a random axis to rotate around while flying for that chaotic cosmic look

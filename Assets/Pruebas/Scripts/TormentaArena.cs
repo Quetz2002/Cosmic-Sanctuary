@@ -55,7 +55,11 @@ public class TormentaArena : MonoBehaviour
         if (recolectado >= recolectadoEliminacion)
             return 0f;
 
-        float t = (float)(recolectado - recolectadoInicioDisminucion) / (recolectadoEliminacion - recolectadoInicioDisminucion);
+        float divisor = recolectadoEliminacion - recolectadoInicioDisminucion;
+        if (divisor <= 0f)
+            return 0f;
+
+        float t = (float)(recolectado - recolectadoInicioDisminucion) / divisor;
         return 1f - t;
     }
 

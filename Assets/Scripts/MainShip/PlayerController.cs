@@ -20,14 +20,37 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
 
     public bool isEditingUI = false;
+    
+    [Header("Movement Control")]
+    public bool canMove = true;
+
+    private float startYaw = 0f;
+    private float horizontalRotation = 0f;
 
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        cameraTransform = Camera.main.transform;
+        if (Camera.main != null)
+        {
+            cameraTransform = Camera.main.transform;
+        }
+        else
+        {
+            Debug.LogWarning("[PlayerController] Camera.main not found during Start. Attempting to search children.");
+            cameraTransform = GetComponentInChildren<Camera>()?.transform;
+        }
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        startYaw = transform.localEulerAngles.y;
+        horizontalRotation = 0f;
+
+        // Auto-disable movement in the Shuttle scene so the player can only aim and shoot
+        if (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Shuttle")
+        {
+            canMove = false;
+        }
     }
 
     private void Update()
@@ -35,19 +58,49 @@ public class PlayerController : MonoBehaviour
         if (isEditingUI) return;
 
         HandleLook();
-        HandleMovement();
+
+        if (canMove)
+        {
+            HandleMovement();
+        }
     }
 
     private void HandleLook()
     {
+        if (cameraTransform == null)
+        {
+            if (Camera.main != null)
+            {
+                cameraTransform = Camera.main.transform;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(verticalRotation, -90f, 90f);
+        bool inShuttle = (UnityEngine.SceneManagement.SceneManager.GetActiveScene().name == "Shuttle");
 
+        // Pitch clamp (Up/Down)
+        verticalRotation -= mouseY;
+        float pitchLimit = inShuttle ? 80f : 90f;
+        verticalRotation = Mathf.Clamp(verticalRotation, -pitchLimit, pitchLimit);
         cameraTransform.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
-        transform.Rotate(Vector3.up * mouseX);
+
+        // Yaw clamp (Left/Right)
+        if (inShuttle)
+        {
+            horizontalRotation += mouseX;
+            horizontalRotation = Mathf.Clamp(horizontalRotation, -80f, 80f);
+            transform.localRotation = Quaternion.Euler(0f, startYaw + horizontalRotation, 0f);
+        }
+        else
+        {
+            transform.Rotate(Vector3.up * mouseX);
+        }
     }
 
     private void HandleMovement()
