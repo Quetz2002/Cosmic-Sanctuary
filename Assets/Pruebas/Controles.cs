@@ -154,6 +154,15 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Pausa"",
+                    ""type"": ""Button"",
+                    ""id"": ""ecec878a-545e-425e-8c54-68c6c31e97ca"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -277,6 +286,17 @@ public partial class @Controles: IInputActionCollection2, IDisposable
                     ""action"": ""Comenzar"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""05eb1c4c-949e-48c3-a652-ac785ffd8847"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Pausa"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -292,6 +312,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         m_Jugador_Saltar = m_Jugador.FindAction("Saltar", throwIfNotFound: true);
         m_Jugador_Sprint = m_Jugador.FindAction("Sprint", throwIfNotFound: true);
         m_Jugador_Comenzar = m_Jugador.FindAction("Comenzar", throwIfNotFound: true);
+        m_Jugador_Pausa = m_Jugador.FindAction("Pausa", throwIfNotFound: true);
     }
 
     ~@Controles()
@@ -379,6 +400,7 @@ public partial class @Controles: IInputActionCollection2, IDisposable
     private readonly InputAction m_Jugador_Saltar;
     private readonly InputAction m_Jugador_Sprint;
     private readonly InputAction m_Jugador_Comenzar;
+    private readonly InputAction m_Jugador_Pausa;
     /// <summary>
     /// Provides access to input actions defined in input action map "Jugador".
     /// </summary>
@@ -418,6 +440,10 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "Jugador/Comenzar".
         /// </summary>
         public InputAction @Comenzar => m_Wrapper.m_Jugador_Comenzar;
+        /// <summary>
+        /// Provides access to the underlying input action "Jugador/Pausa".
+        /// </summary>
+        public InputAction @Pausa => m_Wrapper.m_Jugador_Pausa;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -465,6 +491,9 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Comenzar.started += instance.OnComenzar;
             @Comenzar.performed += instance.OnComenzar;
             @Comenzar.canceled += instance.OnComenzar;
+            @Pausa.started += instance.OnPausa;
+            @Pausa.performed += instance.OnPausa;
+            @Pausa.canceled += instance.OnPausa;
         }
 
         /// <summary>
@@ -497,6 +526,9 @@ public partial class @Controles: IInputActionCollection2, IDisposable
             @Comenzar.started -= instance.OnComenzar;
             @Comenzar.performed -= instance.OnComenzar;
             @Comenzar.canceled -= instance.OnComenzar;
+            @Pausa.started -= instance.OnPausa;
+            @Pausa.performed -= instance.OnPausa;
+            @Pausa.canceled -= instance.OnPausa;
         }
 
         /// <summary>
@@ -586,5 +618,12 @@ public partial class @Controles: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnComenzar(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Pausa" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnPausa(InputAction.CallbackContext context);
     }
 }

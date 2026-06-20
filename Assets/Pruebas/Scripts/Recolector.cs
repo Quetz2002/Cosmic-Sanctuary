@@ -12,7 +12,11 @@ public class Recolector : MonoBehaviour
 
     private Controles controles;
     private bool enZonaEntrega = false;
-
+    
+    public AudioSource audioSource;
+    public AudioClip sonidoArrancar;       
+    public AudioClip sonidoRecibir;
+    public AudioClip sonidoDepositar;
     void Awake()
     {
         controles = new Controles();
@@ -41,6 +45,7 @@ public class Recolector : MonoBehaviour
         {
             if (hit.collider.CompareTag("Recolectable"))
             {
+                ReproducirSonido(sonidoArrancar);
                 AnimacionAbsorcion absorcion = hit.collider.GetComponent<AnimacionAbsorcion>();
 
                 if (absorcion != null)
@@ -57,6 +62,8 @@ public class Recolector : MonoBehaviour
 
         if (DataManager.Instancia != null)
             DataManager.Instancia.SumarRecolectado(1);
+
+        ReproducirSonido(sonidoRecibir);
 
         AnimacionAbsorcion absorcion = obj.GetComponent<AnimacionAbsorcion>();
         if (absorcion != null)
@@ -75,6 +82,7 @@ public class Recolector : MonoBehaviour
             if (DataManager.Instancia != null)
                 DataManager.Instancia.SumarScore(objetosCargando);
             depositadosEstaSesion += objetosCargando;
+            ReproducirSonido(sonidoDepositar);
             objetosCargando = 0;
         }
     }
@@ -87,6 +95,12 @@ public class Recolector : MonoBehaviour
             if (textoEntrega != null)
                 textoEntrega.Mostrar();
         }
+    }
+
+    void ReproducirSonido(AudioClip clip)
+    {
+        if (audioSource != null && clip != null)
+            audioSource.PlayOneShot(clip);
     }
 
     void OnTriggerExit(Collider other)

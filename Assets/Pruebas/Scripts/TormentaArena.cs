@@ -3,6 +3,7 @@ using UnityEngine;
 public class TormentaArena : MonoBehaviour
 {
     public ParticleSystem particulas;
+    public AudioSource sonidoViento;
 
     public int recolectadoInicioDisminucion;
     public int recolectadoEliminacion;         
@@ -12,6 +13,8 @@ public class TormentaArena : MonoBehaviour
     public float emisionMaxima;
 
     public float densidadMaxima = 0.03f;
+
+    public float volumenMaximo = 1f;
 
     private ParticleSystem.EmissionModule emision;
     private float intensidad = 1f;
@@ -61,5 +64,21 @@ public class TormentaArena : MonoBehaviour
         emision.rateOverTime = emisionMaxima * intensidad;
         RenderSettings.fogDensity = densidadMaxima * intensidad;
         RenderSettings.fog = intensidad > 0.001f;
+
+        if (sonidoViento != null)
+        {
+            sonidoViento.volume = volumenMaximo * intensidad;
+
+            if (intensidad <= 0.001f)
+            {
+                if (sonidoViento.isPlaying)
+                    sonidoViento.Stop();
+            }
+            else
+            {
+                if (!sonidoViento.isPlaying)
+                    sonidoViento.Play();
+            }
+        }
     }
 }
