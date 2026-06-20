@@ -15,16 +15,24 @@ public class CamaraMouse : MonoBehaviour
         controles = new Controles();
     }
 
+    private void OnMirar(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => entradaMirar = ctx.ReadValue<Vector2>();
+    private void OnMirarCanceled(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => entradaMirar = Vector2.zero;
+
     void OnEnable()
     {
         controles.Jugador.Enable();
-        controles.Jugador.Mirar.performed += ctx => entradaMirar = ctx.ReadValue<Vector2>();
-        controles.Jugador.Mirar.canceled += ctx => entradaMirar = Vector2.zero;
+        controles.Jugador.Mirar.performed += OnMirar;
+        controles.Jugador.Mirar.canceled += OnMirarCanceled;
     }
 
     void OnDisable()
     {
-        controles.Jugador.Disable();
+        if (controles != null)
+        {
+            controles.Jugador.Mirar.performed -= OnMirar;
+            controles.Jugador.Mirar.canceled -= OnMirarCanceled;
+            controles.Jugador.Disable();
+        }
     }
 
     void Start()

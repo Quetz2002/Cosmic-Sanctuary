@@ -57,6 +57,7 @@ public class Spawner : MonoBehaviour
     bool ObtenerPuntoEnSuelo(out Vector3 resultado)
     {
         resultado = Vector3.zero;
+        if (zonaSpawn == null) return false;
 
         Bounds limites = zonaSpawn.bounds;
         float x = UnityEngine.Random.Range(limites.min.x, limites.max.x);
@@ -91,7 +92,7 @@ public class Spawner : MonoBehaviour
 
         if (pool.Count == 0)
         {
-            AlRecolectarTodo.Invoke();
+            AlRecolectarTodo?.Invoke();
         }
     }
 

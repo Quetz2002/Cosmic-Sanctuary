@@ -33,7 +33,11 @@ public class ShuttleGameplayManager : MonoBehaviour
         if (voyageFinished) return;
         voyageFinished = true;
 
-        int targetIndex = GameManager.Instance.currentTargetPlanetIndex;
+        int targetIndex = -1;
+        if (GameManager.Instance != null)
+        {
+            targetIndex = GameManager.Instance.currentTargetPlanetIndex;
+        }
 
         // Safety fallback: if no planet index was saved, I return the player to the Ship
         if (targetIndex < 0 || targetIndex >= planetSceneNames.Length)

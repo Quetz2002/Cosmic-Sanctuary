@@ -26,7 +26,7 @@ public class PlayerInteraction : MonoBehaviour
         // I don't want to scan for world interactions if the star map is currently active
         if (mapController != null && mapController.isMapOpen)
         {
-            if (interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(false);
+            if (interactionText != null && interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(false);
             if (crosshair != null && crosshair.activeSelf) crosshair.SetActive(false);
             return;
         }
@@ -43,10 +43,13 @@ public class PlayerInteraction : MonoBehaviour
 
             if (interactable != null)
             {
-                if (!interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(true);
+                if (interactionText != null)
+                {
+                    if (!interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(true);
 
-                // FIXED: I dynamically fetch the context-aware prompt text calculated by the object itself
-                interactionText.text = interactable.GetInteractionPrompt();
+                    // FIXED: I dynamically fetch the context-aware prompt text calculated by the object itself
+                    interactionText.text = interactable.GetInteractionPrompt();
+                }
 
                 // I listen for the interaction input key trigger
                 if (Input.GetKeyDown(KeyCode.F))
@@ -57,7 +60,7 @@ public class PlayerInteraction : MonoBehaviour
         }
         else
         {
-            if (interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(false);
+            if (interactionText != null && interactionText.gameObject.activeSelf) interactionText.gameObject.SetActive(false);
         }
     }
 }

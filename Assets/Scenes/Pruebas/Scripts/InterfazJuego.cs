@@ -30,11 +30,13 @@ public class Interfaz : MonoBehaviour
     {
         if (recolector != null)
         {
-            textoCargando.text = "Cargando: " + recolector.objetosCargando;
-            textoEntregado.text = "Entregados: " + recolector.puntuacionTotal;
+            if (textoCargando != null)
+                textoCargando.text = "Cargando: " + recolector.objetosCargando;
+            if (textoEntregado != null)
+                textoEntregado.text = "Entregados: " + recolector.puntuacionTotal;
         }
 
-        if (generador != null)
+        if (generador != null && textoRestantes != null)
             textoRestantes.text = "Restantes: " + generador.ObjetosRestantes();
     }
 }
