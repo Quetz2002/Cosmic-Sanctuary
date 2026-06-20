@@ -20,20 +20,32 @@ public class Recolector : MonoBehaviour
             camara = Camera.main;
     }
 
+    private void OnRecolectar(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => IntentarRecolectar();
+    private void OnDepositar(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => IntentarDepositar();
+
     void OnEnable()
     {
         controles.Jugador.Enable();
-        controles.Jugador.Recolectar.performed += ctx => IntentarRecolectar();
-        controles.Jugador.Depositar.performed += ctx => IntentarDepositar();
+        controles.Jugador.Recolectar.performed += OnRecolectar;
+        controles.Jugador.Depositar.performed += OnDepositar;
     }
 
     void OnDisable()
     {
-        controles.Jugador.Disable();
+        if (controles != null)
+        {
+            controles.Jugador.Recolectar.performed -= OnRecolectar;
+            controles.Jugador.Depositar.performed -= OnDepositar;
+            controles.Jugador.Disable();
+        }
     }
 
     void IntentarRecolectar()
     {
+        if (camara == null)
+            camara = Camera.main;
+        if (camara == null) return;
+
         Ray ray = new Ray(camara.transform.position, camara.transform.forward);
         RaycastHit hit;
 

@@ -75,11 +75,6 @@ namespace Giovanni.Gameplay
                     collector = playerObj.AddComponent<Collector>();
                     Debug.Log($"[GiovanniBootstrap] Attached Collector script to: {playerObj.name}");
                 }
-                if (playerObj != null)
-                {
-                    collector = playerObj.AddComponent<Collector>();
-                    Debug.Log($"[GiovanniBootstrap] Attached Collector script to: {playerObj.name}");
-                }
                 else
                 {
                     Debug.LogWarning("[GiovanniBootstrap] Player GameObject not found! HUD will be created but not bound to a player yet.");

@@ -22,7 +22,8 @@ public class Mira : MonoBehaviour
         if (imagenMira == null)
             imagenMira = GetComponent<Image>();
 
-        imagenMira.sprite = spriteNormal;
+        if (imagenMira != null)
+            imagenMira.sprite = spriteNormal;
     }
 
     void Update()
@@ -31,13 +32,18 @@ public class Mira : MonoBehaviour
 
         if (apuntando != estabaResaltado)
         {
-            imagenMira.sprite = apuntando ? spriteResaltado : spriteNormal;
+            if (imagenMira != null)
+                imagenMira.sprite = apuntando ? spriteResaltado : spriteNormal;
             estabaResaltado = apuntando;
         }
     }
 
     bool ApuntandoARecolectable()
     {
+        if (camara == null)
+            camara = Camera.main;
+        if (camara == null) return false;
+
         Ray ray = new Ray(camara.transform.position, camara.transform.forward);
         RaycastHit hit;
 

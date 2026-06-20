@@ -22,11 +22,14 @@ public class PlacementSystem : MonoBehaviour
 
     private void Start()
     {
-        playerCamera = Camera.main;
+        if (playerCamera == null) playerCamera = Camera.main;
     }
 
     private void Update()
     {
+        if (playerCamera == null) playerCamera = Camera.main;
+        if (playerCamera == null) return;
+
         if (!isPlacingMode)
         {
             CheckForMovingExistingObject();

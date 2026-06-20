@@ -53,7 +53,7 @@ public class PlayerController : MonoBehaviour
     private void HandleMovement()
     {
         // I calculate custom ground detection using a physics sphere check at the feet
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        isGrounded = groundCheck != null ? Physics.CheckSphere(groundCheck.position, groundDistance, groundMask) : controller.isGrounded;
 
         float x = Input.GetAxis("Horizontal");
         float z = Input.GetAxis("Vertical");

@@ -40,8 +40,8 @@ namespace Giovanni.Gameplay
             if (controls != null)
             {
                 controls.Jugador.Enable();
-                controls.Jugador.Recolectar.performed += ctx => TryCollect();
-                controls.Jugador.Depositar.performed += ctx => TryDeposit();
+                controls.Jugador.Recolectar.performed += Recolectar_performed;
+                controls.Jugador.Depositar.performed += Depositar_performed;
             }
         }
 
@@ -49,8 +49,20 @@ namespace Giovanni.Gameplay
         {
             if (controls != null)
             {
+                controls.Jugador.Recolectar.performed -= Recolectar_performed;
+                controls.Jugador.Depositar.performed -= Depositar_performed;
                 controls.Jugador.Disable();
             }
+        }
+
+        private void Recolectar_performed(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+        {
+            TryCollect();
+        }
+
+        private void Depositar_performed(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+        {
+            TryDeposit();
         }
 
         private void Start()
