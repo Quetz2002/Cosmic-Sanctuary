@@ -1,14 +1,14 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class Recolectar : MonoBehaviour
+public class Recolector : MonoBehaviour
 {
     public float distanciaMaxima = 3f;
     public Camera camara;
-    public Spawner generador;
+    public Spawner spawner;
     public TextoFlotante textoEntrega;
     public int objetosCargando = 0;
-    public int puntuacionTotal = 0;
+    public int depositadosEstaSesion = 0;
 
     private Controles controles;
     private bool enZonaEntrega = false;
@@ -41,27 +41,40 @@ public class Recolectar : MonoBehaviour
         {
             if (hit.collider.CompareTag("Recolectable"))
             {
-                Absorcion absorcion = hit.collider.GetComponent<Absorcion>();
+                AnimacionAbsorcion absorcion = hit.collider.GetComponent<AnimacionAbsorcion>();
 
                 if (absorcion != null)
-                {
                     absorcion.Iniciar(camara.transform, RecolectarFinal);
-                }
+                else
+                    RecolectarFinal(hit.collider.gameObject);
             }
         }
     }
 
     void RecolectarFinal(GameObject obj)
     {
-        generador.RetirarDePool(obj);
         objetosCargando++;
+
+        if (DataManager.Instancia != null)
+            DataManager.Instancia.SumarRecolectado(1);
+
+        AnimacionAbsorcion absorcion = obj.GetComponent<AnimacionAbsorcion>();
+        if (absorcion != null)
+            absorcion.Resetear();
+
+        obj.SetActive(false);
+
+        if (spawner != null)
+            spawner.Reaparecer(obj);
     }
 
     void IntentarDepositar()
     {
         if (enZonaEntrega && objetosCargando > 0)
         {
-            puntuacionTotal += objetosCargando;
+            if (DataManager.Instancia != null)
+                DataManager.Instancia.SumarScore(objetosCargando);
+            depositadosEstaSesion += objetosCargando;
             objetosCargando = 0;
         }
     }

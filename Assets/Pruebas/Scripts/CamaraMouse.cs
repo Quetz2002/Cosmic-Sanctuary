@@ -10,6 +10,8 @@ public class CamaraMouse : MonoBehaviour
     private Vector2 entradaMirar;
     private float rotacionX = 0f;
 
+    public bool controlActivo = false;
+
     void Awake()
     {
         controles = new Controles();
@@ -35,7 +37,10 @@ public class CamaraMouse : MonoBehaviour
 
     void Update()
     {
-        float mouseX = entradaMirar.x * sensibilidad;
+        if (!controlActivo)
+            return;
+
+            float mouseX = entradaMirar.x * sensibilidad;
         float mouseY = entradaMirar.y * sensibilidad;
 
         rotacionX -= mouseY;

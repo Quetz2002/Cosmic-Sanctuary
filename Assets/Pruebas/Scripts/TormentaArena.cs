@@ -3,20 +3,18 @@ using UnityEngine;
 public class TormentaArena : MonoBehaviour
 {
     public ParticleSystem particulas;
-    public Spawner generador;
 
-    [Range(0f, 1f)]
-    public float intensidad = 1f;
+    public int recolectadoInicioDisminucion;
+    public int recolectadoEliminacion;         
 
-    [Range(0f, 1f)]
-    public float umbralInicioDisminucion = 0.5f;
     public float velocidadCambio = 1f;
 
-    public float emisionMaxima = 400f;
+    public float emisionMaxima;
 
     public float densidadMaxima = 0.03f;
 
     private ParticleSystem.EmissionModule emision;
+    private float intensidad = 1f;
 
     void Awake()
     {
@@ -27,30 +25,34 @@ public class TormentaArena : MonoBehaviour
 
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.ExponentialSquared;
+
+        intensidad = CalcularIntensidadObjetivo();
+        AplicarIntensidad();
     }
 
     void Update()
     {
-        if (generador != null)
-        {
-            float intensidadObjetivo = CalcularIntensidadPorProgreso();
-            intensidad = Mathf.MoveTowards(intensidad, intensidadObjetivo, velocidadCambio * Time.deltaTime);
-        }
+        float objetivo = CalcularIntensidadObjetivo();
+
+        intensidad = Mathf.MoveTowards(intensidad, objetivo, velocidadCambio * Time.deltaTime);
 
         AplicarIntensidad();
     }
 
-    float CalcularIntensidadPorProgreso()
+    float CalcularIntensidadObjetivo()
     {
-        float progreso = generador.ProgresoRecoleccion();
-
-        if (progreso < umbralInicioDisminucion)
+        if (DataManager.Instancia == null)
             return 1f;
 
-        if (progreso >= 1f)
+        int recolectado = DataManager.Instancia.ObtenerTotalRecolectado();
+
+        if (recolectado < recolectadoInicioDisminucion)
+            return 1f;
+
+        if (recolectado >= recolectadoEliminacion)
             return 0f;
 
-        float t = (progreso - umbralInicioDisminucion) / (1f - umbralInicioDisminucion);
+        float t = (float)(recolectado - recolectadoInicioDisminucion) / (recolectadoEliminacion - recolectadoInicioDisminucion);
         return 1f - t;
     }
 
