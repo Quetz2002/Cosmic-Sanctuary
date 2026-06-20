@@ -63,6 +63,15 @@ public class HologramMapController : MonoBehaviour
         PlayerController player = Object.FindFirstObjectByType<PlayerController>();
         if (player != null) player.isEditingUI = true;
 
+        if (playerCamera == null) playerCamera = Camera.main;
+        if (playerCamera == null)
+        {
+            Debug.LogError("[HologramMapController] playerCamera is null! Cannot transition camera.");
+            isMapOpen = false;
+            if (player != null) player.isEditingUI = false;
+            return;
+        }
+
         StartCoroutine(TransitionCameraAndOpenMap());
     }
 

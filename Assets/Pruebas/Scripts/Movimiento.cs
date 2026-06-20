@@ -39,24 +39,38 @@ public class Movimiento : MonoBehaviour
         estaminaActual = estaminaMaxima;          
     }
 
+    private void OnMover(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => entradaMovimiento = ctx.ReadValue<Vector2>();
+    private void OnMoverCanceled(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => entradaMovimiento = Vector2.zero;
+    private void OnSaltar(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => Saltar();
+    private void OnSprint(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => sprintando = true;
+    private void OnSprintCanceled(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => sprintando = false;
+
     void OnEnable()
     {
         controles.Jugador.Enable();
-        controles.Jugador.Mover.performed += ctx => entradaMovimiento = ctx.ReadValue<Vector2>();
-        controles.Jugador.Mover.canceled += ctx => entradaMovimiento = Vector2.zero;
-        controles.Jugador.Saltar.performed += ctx => Saltar();
-        controles.Jugador.Sprint.performed += ctx => sprintando = true;
-        controles.Jugador.Sprint.canceled += ctx => sprintando = false;
+        controles.Jugador.Mover.performed += OnMover;
+        controles.Jugador.Mover.canceled += OnMoverCanceled;
+        controles.Jugador.Saltar.performed += OnSaltar;
+        controles.Jugador.Sprint.performed += OnSprint;
+        controles.Jugador.Sprint.canceled += OnSprintCanceled;
     }
 
     void OnDisable()
     {
-        controles.Jugador.Disable();
+        if (controles != null)
+        {
+            controles.Jugador.Mover.performed -= OnMover;
+            controles.Jugador.Mover.canceled -= OnMoverCanceled;
+            controles.Jugador.Saltar.performed -= OnSaltar;
+            controles.Jugador.Sprint.performed -= OnSprint;
+            controles.Jugador.Sprint.canceled -= OnSprintCanceled;
+            controles.Jugador.Disable();
+        }
     }
 
     void Update()
     {
-        enSuelo = Physics.CheckSphere(checkSuelo.position, radioCheck, capaSuelo);
+        enSuelo = checkSuelo != null ? Physics.CheckSphere(checkSuelo.position, radioCheck, capaSuelo) : false;
         GestionarEstamina();                      
     }
 

@@ -40,8 +40,8 @@ namespace Giovanni.Gameplay
             if (controls != null)
             {
                 controls.Jugador.Enable();
-                controls.Jugador.Recolectar.performed += ctx => TryCollect();
-                controls.Jugador.Depositar.performed += ctx => TryDeposit();
+                controls.Jugador.Recolectar.performed += Recolectar_performed;
+                controls.Jugador.Depositar.performed += Depositar_performed;
             }
         }
 
@@ -49,8 +49,20 @@ namespace Giovanni.Gameplay
         {
             if (controls != null)
             {
+                controls.Jugador.Recolectar.performed -= Recolectar_performed;
+                controls.Jugador.Depositar.performed -= Depositar_performed;
                 controls.Jugador.Disable();
             }
+        }
+
+        private void Recolectar_performed(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+        {
+            TryCollect();
+        }
+
+        private void Depositar_performed(UnityEngine.InputSystem.InputAction.CallbackContext ctx)
+        {
+            TryDeposit();
         }
 
         private void Start()
@@ -68,6 +80,10 @@ namespace Giovanni.Gameplay
                 return;
             }
 
+            if (playerCamera == null)
+            {
+                playerCamera = Camera.main;
+            }
             if (playerCamera == null) return;
 
             Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
@@ -75,7 +91,7 @@ namespace Giovanni.Gameplay
 
             if (Physics.Raycast(ray, out hit, maxGrabDistance))
             {
-                CollectableItem collectable = hit.collider.GetComponent<CollectableItem>();
+                CollectableItem collectable = hit.collider.GetComponentInParent<CollectableItem>();
                 if (collectable != null)
                 {
                     // Start suction animation if not already being collected

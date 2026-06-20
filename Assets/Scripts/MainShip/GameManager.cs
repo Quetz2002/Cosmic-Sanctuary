@@ -25,6 +25,9 @@ public class GameManager : MonoBehaviour
     [Header("Ship State")]
     public List<PlacedItemData> placedItemsData = new List<PlacedItemData>();
 
+    [HideInInspector] public string previousSceneName = "";
+    [HideInInspector] public string currentSceneName = "";
+
     private void Awake()
     {
         // I ensure this manager survives all scene loads
@@ -39,12 +42,28 @@ public class GameManager : MonoBehaviour
 
         // I subscribe to the scene load event to rebuild the ship when we return
         SceneManager.sceneLoaded += OnSceneLoaded;
+
+        // Initialize currentSceneName on startup
+        currentSceneName = SceneManager.GetActiveScene().name;
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Track transition before processing load logic
+        if (currentSceneName != scene.name)
+        {
+            previousSceneName = currentSceneName;
+            currentSceneName = scene.name;
+            Debug.Log($"[GameManager] Scene transition: '{previousSceneName}' -> '{currentSceneName}'");
+        }
+
         // Whenever a scene loads, if it's the Ship scene, I rebuild the placed items
-        if (scene.name == "ShipScene") // CHANGE THIS TO YOUR ACTUAL SHIP SCENE NAME
+        if (scene.name == "MainShip") // FIXED: Using the actual scene name 'MainShip'
         {
             RebuildShipEnvironment();
         }
