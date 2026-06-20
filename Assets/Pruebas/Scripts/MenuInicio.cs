@@ -18,15 +18,21 @@ public class MenuInicio : MonoBehaviour
         controles = new Controles();
     }
 
+    private void OnComenzar(UnityEngine.InputSystem.InputAction.CallbackContext ctx) => Comenzar();
+
     void OnEnable()
     {
         controles.Jugador.Enable();
-        controles.Jugador.Comenzar.performed += ctx => Comenzar();
+        controles.Jugador.Comenzar.performed += OnComenzar;
     }
 
     void OnDisable()
     {
-        controles.Jugador.Disable();
+        if (controles != null)
+        {
+            controles.Jugador.Comenzar.performed -= OnComenzar;
+            controles.Jugador.Disable();
+        }
     }
 
     void Start()

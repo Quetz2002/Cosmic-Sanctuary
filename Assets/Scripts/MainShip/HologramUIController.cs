@@ -43,16 +43,19 @@ public class HologramUIController : MonoBehaviour
         isUIAccessible = !isUIAccessible;
 
         // I visually hide or show the Canvas
-        hologramCanvas.enabled = isUIAccessible;
+        if (hologramCanvas != null) hologramCanvas.enabled = isUIAccessible;
 
         UpdateHighlight();
 
         // I tell the player controller to freeze camera movement if UI is open
-        Object.FindFirstObjectByType<PlayerController>().isEditingUI = isUIAccessible;
+        PlayerController player = Object.FindFirstObjectByType<PlayerController>();
+        if (player != null) player.isEditingUI = isUIAccessible;
     }
 
     private void MoveSelection(int direction)
     {
+        if (uiElements == null || uiElements.Length == 0) return;
+
         currentIndex += direction;
         if (currentIndex < 0) currentIndex = uiElements.Length - 1;
         if (currentIndex >= uiElements.Length) currentIndex = 0;
@@ -62,21 +65,35 @@ public class HologramUIController : MonoBehaviour
 
     private void UpdateHighlight()
     {
+        if (uiElements == null) return;
+
         // I reset all colors, then highlight the currently selected one to give that cozy, polished feel
         for (int i = 0; i < uiElements.Length; i++)
         {
-            uiElements[i].GetComponent<Image>().color = (i == currentIndex) ? highlightColor : normalColor;
+            if (uiElements[i] != null)
+            {
+                Image img = uiElements[i].GetComponent<Image>();
+                if (img != null)
+                {
+                    img.color = (i == currentIndex) ? highlightColor : normalColor;
+                }
+            }
         }
     }
 
     private void ConfirmSelection()
     {
+        if (GameManager.Instance == null) return;
+
         // I changed 'collectedRewards' to 'unlockedRewards' to match the new GameManager structure
-        if (GameManager.Instance.unlockedRewards.Count > currentIndex)
+        if (GameManager.Instance.unlockedRewards != null && GameManager.Instance.unlockedRewards.Count > currentIndex)
         {
             RewardItem selectedItem = GameManager.Instance.unlockedRewards[currentIndex];
-            placementSystem.StartPlacingItem(selectedItem);
-            ToggleUI(); // Close the UI after picking an item
+            if (selectedItem != null && placementSystem != null)
+            {
+                placementSystem.StartPlacingItem(selectedItem);
+                ToggleUI(); // Close the UI after picking an item
+            }
         }
     }
 }

@@ -6,6 +6,7 @@ public class PlacedRewardBehavior : MonoBehaviour
     public string rewardID;
 
     private Renderer itemRenderer;
+    private Material instantiatedMaterial;
 
     private void Awake()
     {
@@ -18,12 +19,23 @@ public class PlacedRewardBehavior : MonoBehaviour
         if (itemRenderer != null)
         {
             // I create a new material instance so changing this item doesn't affect others
-            Material mat = itemRenderer.material;
-            mat.color = baseColor;
+            if (instantiatedMaterial == null)
+            {
+                instantiatedMaterial = itemRenderer.material;
+            }
+            instantiatedMaterial.color = baseColor;
 
             // I enable URP emission and apply the intensity
-            mat.EnableKeyword("_EMISSION");
-            mat.SetColor("_EmissionColor", baseColor * emissionIntensity);
+            instantiatedMaterial.EnableKeyword("_EMISSION");
+            instantiatedMaterial.SetColor("_EmissionColor", baseColor * emissionIntensity);
+        }
+    }
+
+    private void OnDestroy()
+    {
+        if (instantiatedMaterial != null)
+        {
+            Destroy(instantiatedMaterial);
         }
     }
 }

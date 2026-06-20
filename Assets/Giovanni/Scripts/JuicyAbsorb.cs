@@ -22,11 +22,12 @@ namespace Giovanni.Gameplay
         private float currentSpeed;
         private float progress = 0f;
         private Vector3 startPosition;
+        private Vector3 currentLinearPosition;
         private Vector3 randomRotationAxis;
         private Vector3 originalScale;
         private bool isAbsorbing = false;
 
-        private void Start()
+        private void Awake()
         {
             originalScale = transform.localScale;
             // Generate a random axis to rotate around while flying for that chaotic cosmic look
@@ -41,6 +42,7 @@ namespace Giovanni.Gameplay
             targetTransform = target;
             onComplete = callback;
             startPosition = transform.position;
+            currentLinearPosition = startPosition;
             currentSpeed = initialSpeed;
             progress = 0f;
             isAbsorbing = true;
@@ -62,16 +64,15 @@ namespace Giovanni.Gameplay
             if (totalDist > 0.01f)
             {
                 float step = currentSpeed * Time.deltaTime;
-                Vector3 currentPos = transform.position;
-                Vector3 nextPos = Vector3.MoveTowards(currentPos, targetTransform.position, step);
+                currentLinearPosition = Vector3.MoveTowards(currentLinearPosition, targetTransform.position, step);
                 
                 // Track visual interpolation percentage (0 to 1)
-                progress = Vector3.Distance(startPosition, nextPos) / totalDist;
+                progress = Vector3.Distance(startPosition, currentLinearPosition) / totalDist;
                 progress = Mathf.Clamp01(progress);
 
                 // Add a parabolic height offset to simulate a dynamic suction arc
                 float arcOffset = Mathf.Sin(progress * Mathf.PI) * arcHeight;
-                transform.position = nextPos + (Vector3.up * arcOffset);
+                transform.position = currentLinearPosition + (Vector3.up * arcOffset);
             }
             else
             {

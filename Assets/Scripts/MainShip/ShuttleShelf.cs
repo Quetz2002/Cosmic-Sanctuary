@@ -6,6 +6,8 @@ public class ShuttleShelf : MonoBehaviour
 
     private void Start()
     {
+        if (GameManager.Instance == null || displaySlots == null) return;
+
         // I loop through what we've unlocked globally
         for (int i = 0; i < GameManager.Instance.unlockedRewards.Count; i++)
         {
@@ -14,7 +16,7 @@ public class ShuttleShelf : MonoBehaviour
 
             RewardItem item = GameManager.Instance.unlockedRewards[i];
 
-            if (item.miniaturePrefab != null)
+            if (item != null && displaySlots[i] != null && item.miniaturePrefab != null)
             {
                 // I spawn the miniature on the corresponding slot
                 Instantiate(item.miniaturePrefab, displaySlots[i].position, displaySlots[i].rotation, displaySlots[i]);

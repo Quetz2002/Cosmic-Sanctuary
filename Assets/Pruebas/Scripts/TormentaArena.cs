@@ -21,7 +21,10 @@ public class TormentaArena : MonoBehaviour
         if (particulas == null)
             particulas = GetComponent<ParticleSystem>();
 
-        emision = particulas.emission;
+        if (particulas != null)
+        {
+            emision = particulas.emission;
+        }
 
         RenderSettings.fog = true;
         RenderSettings.fogMode = FogMode.ExponentialSquared;
@@ -52,13 +55,20 @@ public class TormentaArena : MonoBehaviour
         if (recolectado >= recolectadoEliminacion)
             return 0f;
 
-        float t = (float)(recolectado - recolectadoInicioDisminucion) / (recolectadoEliminacion - recolectadoInicioDisminucion);
+        float divisor = recolectadoEliminacion - recolectadoInicioDisminucion;
+        if (divisor <= 0f)
+            return 0f;
+
+        float t = (float)(recolectado - recolectadoInicioDisminucion) / divisor;
         return 1f - t;
     }
 
     void AplicarIntensidad()
     {
-        emision.rateOverTime = emisionMaxima * intensidad;
+        if (particulas != null)
+        {
+            emision.rateOverTime = emisionMaxima * intensidad;
+        }
         RenderSettings.fogDensity = densidadMaxima * intensidad;
         RenderSettings.fog = intensidad > 0.001f;
     }

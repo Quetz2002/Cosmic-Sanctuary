@@ -13,11 +13,13 @@ public class RewardCustomizer : MonoBehaviour
 
     private void Start()
     {
-        playerCamera = Camera.main;
+        if (playerCamera == null) playerCamera = Camera.main;
     }
 
     private void Update()
     {
+        if (playerCamera == null) playerCamera = Camera.main;
+
         // I use the 'C' key to customize the object I am looking at
         if (Input.GetKeyDown(KeyCode.C))
         {
@@ -27,7 +29,9 @@ public class RewardCustomizer : MonoBehaviour
 
     private void TryCustomizeObject()
     {
-        if (GameManager.Instance.cosmicMaterials < customizationCost)
+        if (playerCamera == null) return;
+
+        if (GameManager.Instance != null && GameManager.Instance.cosmicMaterials < customizationCost)
         {
             Debug.Log("Not enough materials to customize!");
             return;
@@ -41,7 +45,10 @@ public class RewardCustomizer : MonoBehaviour
             if (behavior != null)
             {
                 // I charge the materials
-                GameManager.Instance.cosmicMaterials -= customizationCost;
+                if (GameManager.Instance != null)
+                {
+                    GameManager.Instance.cosmicMaterials -= customizationCost;
+                }
 
                 // I pick a random color from the palette and set a glowing emission
                 Color newColor = cozyColors[Random.Range(0, cozyColors.Length)];
@@ -50,12 +57,15 @@ public class RewardCustomizer : MonoBehaviour
                 // I apply it visually
                 behavior.ApplyCustomization(newColor, newEmission);
 
-                // I find the saved data in GameManager and update it so it survives scene changes!
-                PlacedItemData data = GameManager.Instance.placedItemsData.Find(item => item.itemID == behavior.rewardID);
-                if (data != null)
+                if (GameManager.Instance != null)
                 {
-                    data.customColor = newColor;
-                    data.emissionIntensity = newEmission;
+                    // I find the saved data in GameManager and update it so it survives scene changes!
+                    PlacedItemData data = GameManager.Instance.placedItemsData.Find(item => item.itemID == behavior.rewardID);
+                    if (data != null)
+                    {
+                        data.customColor = newColor;
+                        data.emissionIntensity = newEmission;
+                    }
                 }
             }
         }
